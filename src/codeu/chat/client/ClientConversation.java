@@ -121,15 +121,6 @@ public final class ClientConversation {
     return null;
   }
 
-  private void joinConversation(String match) {
-    //Check to see if match has a conversatin associated with it
-    ConversationSummary conv = summariesSortedByTitle.first(match);
-    //Check to see if there is a password, if so enter password
-
-    //
-
-  }
-
   private void leaveCurrentConversation() {
     Method.notImplemented();
   }
@@ -196,7 +187,6 @@ public final class ClientConversation {
 
   //Checks if the conversation exists
   public boolean exists(String title){
-    //updateAllConversations();
     ConversationSummary conSum = summariesSortedByTitle.first((title));
     if (conSum != null)
             return true;
