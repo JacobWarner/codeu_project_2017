@@ -345,10 +345,4 @@ public final class Chat {
     }
   }
 
-  public void selectPrivateConversation() {
-    //check if the conversation exists
-    clientContext.conversation.updateAllConversations(false);
-
-    //ask for password
-  }
 }
