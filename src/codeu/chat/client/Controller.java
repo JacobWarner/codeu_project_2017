@@ -41,6 +41,9 @@ public class Controller implements BasicController {
     this.source = source;
   }
 
+  public void encrpt(){
+  }
+
   @Override
   public Message newMessage(Uuid author, Uuid conversation, String body) {
 
@@ -65,8 +68,6 @@ public class Controller implements BasicController {
 
     return response;
   }
-
-
 
   @Override
   public User newUser(String name, String passwordHash, String salt) {

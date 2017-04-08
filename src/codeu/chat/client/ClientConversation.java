@@ -121,15 +121,6 @@ public final class ClientConversation {
     return null;
   }
 
-  private void joinConversation(String match) {
-    //Check to see if match has a conversatin associated with it
-    ConversationSummary conv = summariesSortedByTitle.first(match);
-    //Check to see if there is a password, if so enter password
-
-    //
-
-  }
-
   private void leaveCurrentConversation() {
     Method.notImplemented();
   }
@@ -196,11 +187,32 @@ public final class ClientConversation {
 
   //Checks if the conversation exists
   public boolean exists(String title){
-    //updateAllConversations();
+    updateAllConversations(true);
     ConversationSummary conSum = summariesSortedByTitle.first((title));
     if (conSum != null)
             return true;
     else
       return false;
   }
+
+  //Joins public conversations, supplied the default password which is "password"
+  public boolean joinConversation(String title){
+    return joinConversation(title, "password");
+  }
+
+  //Joins a private conversation, a password is required
+  public boolean joinConversation(String title, String password){
+    if(exists(title)){
+      ConversationSummary conn = summariesSortedByTitle.first((title));
+      if(conn.hasPassword() && conn.isPassword(password))
+        setCurrent(conn);
+      else if(conn.hasPassword())
+        return false;
+      else
+        setCurrent(conn);
+      return true;
+    }
+    else return false;
+  }
+
 }

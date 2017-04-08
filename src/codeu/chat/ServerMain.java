@@ -17,10 +17,8 @@ package codeu.chat;
 
 import java.io.IOException;
 
-import codeu.chat.common.Relay;
-import codeu.chat.common.Secret;
-import codeu.chat.common.Uuid;
-import codeu.chat.common.Uuids;
+import codeu.chat.common.*;
+import codeu.chat.server.DataController;
 import codeu.chat.server.NoOpRelay;
 import codeu.chat.server.RemoteRelay;
 import codeu.chat.server.Server;
@@ -36,6 +34,9 @@ final class ServerMain {
   private static final Logger.Log LOG = Logger.newLog(ServerMain.class);
 
   public static void main(String[] args) {
+
+    DataController.clearDatabase();
+    DataController.makeDatabase();
 
     Logger.enableConsoleOutput();
 

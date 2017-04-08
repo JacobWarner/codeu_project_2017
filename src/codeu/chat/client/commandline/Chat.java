@@ -14,7 +14,6 @@
 
 package codeu.chat.client.commandline;
 
-import java.io.Console;
 import java.util.Scanner;
 
 import codeu.chat.client.ClientContext;
@@ -157,9 +156,29 @@ public final class Chat {
 
     } else if (token.equals("c-select")) {
 
-      selectConversation(lineScanner);
+      //selectConversation(lineScanner);
 
-    } else if (token.equals("m-add")) {
+    } else if (token.equals("c-private")) {
+
+      if (!tokenScanner.hasNext()) {
+        System.out.println("ERROR: No conversation name supplied.");
+      } else {
+        String name = tokenScanner.nextLine().trim();
+        System.out.print("Please enter the password: ");
+        String password = lineScanner.next().trim();
+        joinConversation(name, password);
+      }
+
+    } else if (token.equals("c-public")){
+      if (!tokenScanner.hasNext()) {
+        System.out.println("ERROR: No conversation name supplied.");
+      } else {
+        String name = tokenScanner.nextLine().trim();
+        joinConversation(name, "password");
+      }
+    }
+
+    else if (token.equals("m-add")) {
 
       if (!clientContext.user.hasCurrent()) {
         System.out.println("ERROR: Not signed in.");
@@ -316,6 +335,8 @@ public final class Chat {
     return alive;
   }
 
+  /* Old code
+
   public void selectConversation(Scanner lineScanner) {
 
     clientContext.conversation.updateAllConversations(false);
@@ -343,12 +364,24 @@ public final class Chat {
       clientContext.conversation.setCurrent(newCurrent);
       clientContext.conversation.updateAllConversations(true);
     }
+  }*/
+
+  public void joinConversation(String name, String password) {
+    final ConversationSummary previous = clientContext.conversation.getCurrent();
+    ConversationSummary newCurrent = null;
+
+    clientContext.conversation.joinConversation(name, password);
+    newCurrent = clientContext.conversation.getCurrent();
+
+    //Executed if the selected conversation exists and is new
+    if(newCurrent!=null && (newCurrent != previous)){
+      clientContext.message.resetCurrent(true);
+      clientContext.conversation.updateAllConversations(true);
+    }
   }
 
-  public void selectPrivateConversation() {
-    //check if the conversation exists
-    clientContext.conversation.updateAllConversations(false);
-
-    //ask for password
+  public void joinConversation(String name){
+    joinConversation(name, "password");
   }
+
 }
