@@ -40,7 +40,7 @@ public interface BasicController {
   //   successful, a User object will be returned representing the full
   //   state of the user on the server. Whether user names can be shared
   //   is undefined.
-  User newUser(String name);
+  User newUser(String name, String passwordHash, String salt);
 
   // NEW CONVERSATION
   //
@@ -49,6 +49,6 @@ public interface BasicController {
   //  operation is successful, a Conversation object will be returned
   //  representing the full state of the conversation on the server.
   //  Whether conversations can have the same title is undefined.
-  Conversation newConversation(String title, Uuid owner);
+  Conversation newConversation(String title, Uuid owner, String passHash, String salt);
 
 }

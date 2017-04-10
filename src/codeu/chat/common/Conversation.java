@@ -26,41 +26,44 @@ import codeu.chat.util.Time;
 import codeu.chat.util.Uuid;
 
 public final class Conversation {
+  public static final Serializer<Conversation> SERIALIZER =
+      new Serializer<Conversation>() {
 
-  public static final Serializer<Conversation> SERIALIZER = new Serializer<Conversation>() {
+        @Override
+        public void write(OutputStream out, Conversation value) throws IOException {
 
-    @Override
-    public void write(OutputStream out, Conversation value) throws IOException {
+          Uuid.SERIALIZER.write(out, value.id);
+          Uuid.SERIALIZER.write(out, value.owner);
+          Time.SERIALIZER.write(out, value.creation);
+          Serializers.STRING.write(out, value.title);
+          Serializers.STRING.write(out, value.getPassHash());
+          Serializers.STRING.write(out, value.getSalt());
+          Serializers.collection(Uuid.SERIALIZER).write(out, value.users);
+          Uuid.SERIALIZER.write(out, value.firstMessage);
+          Uuid.SERIALIZER.write(out, value.lastMessage);
+        }
 
-      Uuid.SERIALIZER.write(out, value.id);
-      Uuid.SERIALIZER.write(out, value.owner);
-      Time.SERIALIZER.write(out, value.creation);
-      Serializers.STRING.write(out, value.title);
-      Serializers.collection(Uuid.SERIALIZER).write(out, value.users);
-      Uuid.SERIALIZER.write(out, value.firstMessage);
-      Uuid.SERIALIZER.write(out, value.lastMessage);
+        @Override
+        public Conversation read(InputStream in) throws IOException {
 
-    }
+          final Conversation value =
+              new Conversation(
+                  Uuid.SERIALIZER.read(in),
+                  Uuid.SERIALIZER.read(in),
+                  Time.SERIALIZER.read(in),
+                  Serializers.STRING.read(in),
+                  Serializers.STRING.read(in), //passHash
+                  Serializers.STRING.read(in) //salt
+                  );
 
-    @Override
-    public Conversation read(InputStream in) throws IOException {
+          value.users.addAll(Serializers.collection(Uuid.SERIALIZER).read(in));
 
-      final Conversation value = new Conversation(
-          Uuid.SERIALIZER.read(in),
-          Uuid.SERIALIZER.read(in),
-          Time.SERIALIZER.read(in),
-          Serializers.STRING.read(in)
-      );
+          value.firstMessage = Uuid.SERIALIZER.read(in);
+          value.lastMessage = Uuid.SERIALIZER.read(in);
 
-      value.users.addAll(Serializers.collection(Uuid.SERIALIZER).read(in));
-
-      value.firstMessage = Uuid.SERIALIZER.read(in);
-      value.lastMessage = Uuid.SERIALIZER.read(in);
-
-      return value;
-
-    }
-  };
+          return value;
+        }
+      };
 
   public final ConversationSummary summary;
 
@@ -72,14 +75,27 @@ public final class Conversation {
   public Uuid firstMessage = Uuid.NULL;
   public Uuid lastMessage = Uuid.NULL;
 
-  public Conversation(Uuid id, Uuid owner, Time creation, String title) {
+  private final String passHash;
+  private final String salt;
+
+  public Conversation(
+      Uuid id, Uuid owner, Time creation, String title, String passHash, String salt) {
 
     this.id = id;
     this.owner = owner;
     this.creation = creation;
     this.title = title;
+    this.passHash = passHash;
+    this.salt = salt;
 
     this.summary = new ConversationSummary(id, owner, creation, title);
+  }
 
+  public String getPassHash() {
+    return passHash;
+  }
+
+  public String getSalt() {
+    return salt;
   }
 }
