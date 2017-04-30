@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/../../../../src'
+        main.java.exclude "**/simplegui/"
+        main.java.exclude "**/server/"
+        main.java.exclude "**/SimpleGuiClientMain.java"
+        main.java.exclude "**/ServerMain.java"
+    }
 }
 
 dependencies {
