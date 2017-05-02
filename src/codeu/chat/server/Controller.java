@@ -86,7 +86,7 @@ public final class Controller implements RawController, BasicController {
       // not change.
 
       foundConversation.firstMessage =
-          Uuid.equals(foundConversation.firstMessage, Uuids.NULL)
+          Uuid.equals(foundConversation.firstMessage, Uuid.NULL)
               ? message.id
               : foundConversation.firstMessage;
 

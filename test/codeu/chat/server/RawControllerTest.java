@@ -93,7 +93,7 @@ public final class RawControllerTest {
     assertFalse("Check that the message has a valid reference", message == null);
     assertTrue("Check that the message has the correct id", Uuid.equals(message.id, messageId));
   }
-
+/*
   private static Uuid newTestId(final int id) {
     return Uuid.complete(
         new Uuid() {
@@ -108,4 +108,5 @@ public final class RawControllerTest {
           }
         });
   }
+*/
 }
