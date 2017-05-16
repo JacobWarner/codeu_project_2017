@@ -1,0 +1,11 @@
+# Java
+bin
+build
+*.class
+
+
+# JetBrains IDE
+.idea
+*.iml
+
+# Personal

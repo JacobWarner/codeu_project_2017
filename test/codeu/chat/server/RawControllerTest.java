@@ -94,18 +94,18 @@ public final class RawControllerTest {
     assertTrue("Check that the message has the correct id", Uuid.equals(message.id, messageId));
   }
 
-  private static Uuid newTestId(final int id) {
-    return Uuid.complete(
-        new Uuid() {
-          @Override
-          public Uuid root() {
-            return null;
-          }
-
-          @Override
-          public int id() {
-            return id;
-          }
-        });
-  }
+//  private static Uuid newTestId(final int id) {
+//    return Uuid.complete(
+//        new Uuid() {
+//          @Override
+//          public Uuid root() {
+//            return null;
+//          }
+//
+//          @Override
+//          public int id() {
+//            return id;
+//          }
+//        });
+//  }
 }

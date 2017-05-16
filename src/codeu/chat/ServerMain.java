@@ -83,7 +83,7 @@ final class ServerMain {
   private static void runServer(Uuid id,
                                 byte[] secret,
                                 ConnectionSource serverSource,
-                                ConnectionSource relaySource) {
+                                ConnectionSource relaySource) throws IOException {
 
     final Relay relay = relaySource == null ?
                         new NoOpRelay() :

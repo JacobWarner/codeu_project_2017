@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import codeu.chat.common.Conversation;
+import codeu.chat.common.Conversation;
 import codeu.chat.common.ConversationSummary;
 import codeu.chat.common.LinearUuidGenerator;
 import codeu.chat.common.Message;
@@ -36,6 +37,8 @@ import codeu.chat.util.Time;
 import codeu.chat.util.Timeline;
 import codeu.chat.util.Uuid;
 import codeu.chat.util.connections.Connection;
+import codeu.chat.database.Database;
+import codeu.chat.database.Packer;
 
 public final class Server {
 
@@ -55,12 +58,29 @@ public final class Server {
   private final Relay relay;
   private Uuid lastSeen = Uuid.NULL;
 
-  public Server(final Uuid id, final byte[] secret, final Relay relay) {
+  //TODO: I'll need to change this when moving the database online and away from local connection
+  private String databasePath = "database";
+  private final Database database;
+
+  public Server(final Uuid id, final byte[] secret, final Relay relay) throws IOException {
 
     this.id = id;
     this.secret = Arrays.copyOf(secret, secret.length);
 
     this.controller = new Controller(id, model);
+    this.database = new Database(databasePath);
+    for (User user : database.getUsers(100)) {
+      controller.newUser(user.id, user.name, user.creation, user.getPasswordHash(), user.getSalt());
+      }
+    for (Conversation conversation : database.getConversations(100)) {
+      controller.newConversation(conversation.id, conversation.title, conversation.owner, conversation.creation, conversation.getPassHash(), conversation.getSalt());
+      }
+
+    //TODO: Messages aren't remade correctly - need to change
+    for (Message message : database.getMessages(1000)){
+      controller.newMessage(message.id, message.author, null, message.content, message.creation);
+      }
+
     this.relay = relay;
 
     timeline.scheduleNow(new Runnable() {
@@ -99,6 +119,7 @@ public final class Server {
               connection.out());
 
           LOG.info("Connection handled: %s", success ? "ACCEPTED" : "REJECTED");
+
         } catch (Exception ex) {
 
           LOG.error(ex, "Exception while handling connection.");
@@ -129,6 +150,9 @@ public final class Server {
       Serializers.INTEGER.write(out, NetworkCode.NEW_MESSAGE_RESPONSE);
       Serializers.nullable(Message.SERIALIZER).write(out, message);
 
+      database.write(message);
+      System.out.println("Added message to database.");
+
       timeline.scheduleNow(createSendToRelayEvent(
           author,
           conversation,
@@ -144,6 +168,8 @@ public final class Server {
       Serializers.INTEGER.write(out, NetworkCode.NEW_USER_RESPONSE);
       Serializers.nullable(User.SERIALIZER).write(out, user);
 
+      database.write(user);
+
     } else if (type == NetworkCode.NEW_CONVERSATION_REQUEST) {
 
       final String title = Serializers.STRING.read(in);
@@ -155,6 +181,8 @@ public final class Server {
 
       Serializers.INTEGER.write(out, NetworkCode.NEW_CONVERSATION_RESPONSE);
       Serializers.nullable(Conversation.SERIALIZER).write(out, conversation);
+
+      database.write(conversation);
 
     } else if (type == NetworkCode.GET_USERS_BY_ID_REQUEST) {
 
