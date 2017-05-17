@@ -3,6 +3,7 @@ package codeu.chat.database;
 import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
 import codeu.chat.common.User;
+import codeu.chat.util.Uuid;
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
@@ -46,8 +47,8 @@ public class Database {
      * Convert a Message to document form and store in messages collection
      * @param message: the message to store
      */
-    public void write(Message message){
-        messages.insertOne(Packer.packMessage(message));
+    public void write(Message message, Uuid conversation){
+        messages.insertOne(Packer.packMessage(message,conversation));
     }
 
     /**

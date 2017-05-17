@@ -76,9 +76,8 @@ public final class Server {
       controller.newConversation(conversation.id, conversation.title, conversation.owner, conversation.creation, conversation.getPassHash(), conversation.getSalt());
       }
 
-    //TODO: Messages aren't remade correctly - need to change
     for (Message message : database.getMessages(1000)){
-      controller.newMessage(message.id, message.author, null, message.content, message.creation);
+      controller.newMessage(message.id, message.author, message.conversationID, message.content, message.creation);
       }
 
     this.relay = relay;
@@ -150,7 +149,7 @@ public final class Server {
       Serializers.INTEGER.write(out, NetworkCode.NEW_MESSAGE_RESPONSE);
       Serializers.nullable(Message.SERIALIZER).write(out, message);
 
-      database.write(message);
+      database.write(message, conversation);
       System.out.println("Added message to database.");
 
       timeline.scheduleNow(createSendToRelayEvent(

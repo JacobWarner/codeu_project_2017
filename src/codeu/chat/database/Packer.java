@@ -38,6 +38,7 @@ public class Packer {
                 Uuid.parse(doc.getString("next")),
                 Uuid.parse(doc.getString("previous")),
                 Time.fromMs(doc.getLong("creation")),
+                Uuid.parse(doc.getString("conversation")),
                 Uuid.parse(doc.getString("author")),
                 doc.getString("content")
         );
@@ -82,13 +83,14 @@ public class Packer {
      * @param message: the Message to be converted
      * @return a Document derived from Message
      */
-    public static Document packMessage(Message message) {
+    public static Document packMessage(Message message, Uuid conversation) {
         Document doc = new Document("id", message.id.toString())
                 .append("next", message.next.toString())
                 .append("previous", message.previous.toString())
                 .append("creation", message.creation.inMs())
                 .append("author", message.author.toString())
-                .append("content", message.content.toString());
+                .append("content", message.content.toString())
+                .append("conversation", conversation.toString());
         return doc;
     }
 
