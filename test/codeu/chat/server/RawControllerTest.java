@@ -15,6 +15,8 @@
 package codeu.chat.server;
 
 import static org.junit.Assert.*;
+
+import codeu.chat.database.Database;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -37,7 +39,7 @@ public final class RawControllerTest {
   @Before
   public void doBefore() {
     model = new Model();
-    controller = new Controller(Uuid.NULL, model);
+    controller = new Controller(Uuid.NULL, model, new Database());
 
     userId = new Uuid(1);
     conversationId = new Uuid(2);

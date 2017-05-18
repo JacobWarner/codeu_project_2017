@@ -58,27 +58,12 @@ public final class Server {
   private final Relay relay;
   private Uuid lastSeen = Uuid.NULL;
 
-  //TODO: I'll need to change this when moving the database online and away from local connection
-  private String databasePath = "database";
-  private final Database database;
-
-  public Server(final Uuid id, final byte[] secret, final Relay relay) throws IOException {
+  public Server(final Uuid id, final byte[] secret, final Relay relay){
 
     this.id = id;
     this.secret = Arrays.copyOf(secret, secret.length);
 
-    this.controller = new Controller(id, model);
-    this.database = new Database(databasePath);
-    for (User user : database.getUsers(100)) {
-      controller.newUser(user.id, user.name, user.creation, user.getPasswordHash(), user.getSalt());
-      }
-    for (Conversation conversation : database.getConversations(100)) {
-      controller.newConversation(conversation.id, conversation.title, conversation.owner, conversation.creation, conversation.getPassHash(), conversation.getSalt());
-      }
-
-    for (Message message : database.getMessages(1000)){
-      controller.newMessage(message.id, message.author, message.conversationID, message.content, message.creation);
-      }
+    this.controller = new Controller(id, model, new Database());
 
     this.relay = relay;
 
@@ -149,9 +134,6 @@ public final class Server {
       Serializers.INTEGER.write(out, NetworkCode.NEW_MESSAGE_RESPONSE);
       Serializers.nullable(Message.SERIALIZER).write(out, message);
 
-      database.write(message, conversation);
-      System.out.println("Added message to database.");
-
       timeline.scheduleNow(createSendToRelayEvent(
           author,
           conversation,
@@ -167,8 +149,6 @@ public final class Server {
       Serializers.INTEGER.write(out, NetworkCode.NEW_USER_RESPONSE);
       Serializers.nullable(User.SERIALIZER).write(out, user);
 
-      database.write(user);
-
     } else if (type == NetworkCode.NEW_CONVERSATION_REQUEST) {
 
       final String title = Serializers.STRING.read(in);
@@ -180,8 +160,6 @@ public final class Server {
 
       Serializers.INTEGER.write(out, NetworkCode.NEW_CONVERSATION_RESPONSE);
       Serializers.nullable(Conversation.SERIALIZER).write(out, conversation);
-
-      database.write(conversation);
 
     } else if (type == NetworkCode.GET_USERS_BY_ID_REQUEST) {
 

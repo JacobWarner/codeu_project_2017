@@ -4,15 +4,12 @@ import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
 import codeu.chat.common.User;
 import codeu.chat.util.Uuid;
+import com.mongodb.MongoClientURI;
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class Database {
     public MongoClient mongoClient;
@@ -21,94 +18,74 @@ public class Database {
     public MongoCollection<Document> messages;
     public MongoCollection<Document> conversations;
 
-    public Database(String path){
+    private boolean clearDatabase = false;
+    private String username = "User";
+    private String password = "SuperSecretPassword";
+    private String databasePath = "TestDatabase";
+    private String URI = "mongodb://" + username + ":" + password + "@codeu-shard-00-00-kskbs.mongodb.net:27017,codeu-shard-00-01-kskbs.mongodb.net:27017,codeu-shard-00-02-kskbs.mongodb.net:27017/" + databasePath + "?ssl=true&replicaSet=CodeU-shard-0&authSource=admin";
+
+    public Database(){
         try{
-            //TODO: make MongoClientURI to connect to online database
-            mongoClient = new MongoClient();
-            database = mongoClient.getDatabase(path);
+            MongoClientURI uriConnect = new MongoClientURI(URI);
+            this.mongoClient = new MongoClient(uriConnect);
+            this.database = mongoClient.getDatabase(databasePath);
             System.out.println("Successful connection to database.");
-            loadCollections();
+
+            if(clearDatabase){
+                removeDatabaseCollections();
+            }
+
+            createDatabaseCollections();
+
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
     }
 
     /**
-     * Loads all necessary documents for database (users, messages, conversations)
-     */
-    public void loadCollections(){
-        users = database.getCollection("users");
-        conversations = database.getCollection("conversations");
-        messages = database.getCollection("messages");
-        System.out.println("All database collections loaded successfully.");
-    }
-
-    /**
      * Convert a Message to document form and store in messages collection
      * @param message: the message to store
      */
-    public void write(Message message, Uuid conversation){
-        messages.insertOne(Packer.packMessage(message,conversation));
+    public boolean write(Message message, Uuid conversation){
+        database.getCollection("messages").insertOne(Packer.packMessage(message,conversation));
+        return true;
     }
 
     /**
      * Convert a Conversation to Document form and store in conversations collection
      * @param conversation: the conversation to be stored
      */
-    public void write(Conversation conversation){
-        conversations.insertOne(Packer.packConversation(conversation));
+    public boolean write(Conversation conversation){
+        database.getCollection("conversations").insertOne(Packer.packConversation(conversation));
+        return true;
     }
 
     /**
      * Convert a User to Document form and store in users collection
      * @param user: the user to be stored
      */
-    public void write(User user) {
-        users.insertOne(Packer.packUser(user));
+    public boolean write(User user) {
+        database.getCollection("users").insertOne(Packer.packUser(user));
+        return true;
     }
 
-    /**
-     * Return a collection of Users from the Database
-     * @param limit: the maximum number of users in the collection
-     * @return an ArrayList of Users
-     */
-    public Collection<User> getUsers(int limit) throws IOException {
-        ArrayList<User> returnedUsers = new ArrayList<User>();
-
-        for(Document doc : users.find()) {
-            if (limit-- == 0) break;
-            returnedUsers.add(Packer.unpackUser(doc));
+    public void createDatabaseCollections(){
+        if(database.getCollection("users") == null){
+            database.createCollection("users");
         }
-        return returnedUsers;
+        if(database.getCollection("conversations") == null){
+            database.createCollection("conversations");
+        }
+        if(database.getCollection("messages") == null){
+            database.createCollection("messages");
+        }
+        System.out.println("Created the database collections.");
     }
 
-    /**
-     * Return a collection of Messages from the Database
-     * @param limit: the maximum number of messages in the collection
-     * @return an ArrayList of Messages
-     */
-    public Collection<Message> getMessages(int limit) throws IOException {
-        ArrayList<Message> returnedMessages = new ArrayList<Message>();
-
-        for (Document doc : messages.find()) {
-            if (limit -- == 0) break;
-            returnedMessages.add(Packer.unpackMessage(doc));
-        }
-        return returnedMessages;
-    }
-
-    /**
-     * Return a collection of Conversations from the Database
-     * @param limit: the maximum number of conversations in the collection
-     * @return an ArrayList of Conversations
-     */
-    public Collection<Conversation> getConversations(int limit) throws IOException {
-        ArrayList<Conversation> returnedConversation = new ArrayList<Conversation>();
-
-        for (Document doc : conversations.find()) {
-            if (limit -- == 0) break;
-            returnedConversation.add(Packer.unpackConversation(doc));
-        }
-        return returnedConversation;
+    public void removeDatabaseCollections(){
+        database.getCollection("messages").drop();
+        database.getCollection("conversations").drop();
+        database.getCollection("users").drop();
+        System.out.println("Removed the database collections.");
     }
 }
