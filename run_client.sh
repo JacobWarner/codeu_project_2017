@@ -17,4 +17,4 @@
 LOCAL_MACHINE="localhost@2007"
 
 cd './bin'
-java -classpath "./:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/mysql-connector-java-5.1.41-bin.jar" codeu.chat.ClientMain "$LOCAL_MACHINE"
+java codeu.chat.ClientMain "$LOCAL_MACHINE"

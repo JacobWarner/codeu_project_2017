@@ -15,4 +15,4 @@
 # limitations under the License.
 
 cd './bin'
-java -classpath "./:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/mysql-connector-java-5.1.41-bin.jar" codeu.chat.ServerMain "100.101" "ABABAB" "2007"
+java codeu.chat.ServerMain "100.101" "ABABAB" "2007"

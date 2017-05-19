@@ -33,15 +33,12 @@ import codeu.chat.util.connections.ConnectionSource;
 
 public class Controller implements BasicController {
 
-  private final static Logger.Log LOG = Logger.newLog(Controller.class);
+  private static final Logger.Log LOG = Logger.newLog(Controller.class);
 
   private final ConnectionSource source;
 
   public Controller(ConnectionSource source) {
     this.source = source;
-  }
-
-  public void encrpt(){
   }
 
   @Override
@@ -81,7 +78,6 @@ public class Controller implements BasicController {
       Serializers.STRING.write(connection.out(), passwordHash);
       Serializers.STRING.write(connection.out(), salt);
 
-
       LOG.info("newUser: Request completed.");
 
       if (Serializers.INTEGER.read(connection.in()) == NetworkCode.NEW_USER_RESPONSE) {
@@ -99,7 +95,7 @@ public class Controller implements BasicController {
   }
 
   @Override
-  public Conversation newConversation(String title, Uuid owner, String passHash, String salt)  {
+  public Conversation newConversation(String title, Uuid owner, String passHash, String salt) {
 
     Conversation response = null;
 

@@ -156,7 +156,7 @@ public final class Chat {
 
     } else if (token.equals("c-select")) {
 
-      //selectConversation(lineScanner);
+      System.out.println("Please use c-private or c-public");
 
     } else if (token.equals("c-private")) {
 
@@ -334,37 +334,6 @@ public final class Chat {
 
     return alive;
   }
-
-  /* Old code
-
-  public void selectConversation(Scanner lineScanner) {
-
-    clientContext.conversation.updateAllConversations(false);
-    final int selectionSize = clientContext.conversation.conversationsCount();
-    System.out.format("Selection contains %d entries.\n", selectionSize);
-
-    final ConversationSummary previous = clientContext.conversation.getCurrent();
-    ConversationSummary newCurrent = null;
-
-    if (selectionSize == 0) {
-      System.out.println("Nothing to select.");
-    } else {
-      final ListNavigator<ConversationSummary> navigator =
-          new ListNavigator<ConversationSummary>(
-              clientContext.conversation.getConversationSummaries(), lineScanner, PAGE_SIZE);
-      if (navigator.chooseFromList()) {
-        newCurrent = navigator.getSelectedChoice();
-        clientContext.message.resetCurrent(newCurrent != previous);
-        System.out.format("OK. Conversation \"%s\" selected.\n", newCurrent.title);
-      } else {
-        System.out.println("OK. Current Conversation is unchanged.");
-      }
-    }
-    if (newCurrent != previous) {
-      clientContext.conversation.setCurrent(newCurrent);
-      clientContext.conversation.updateAllConversations(true);
-    }
-  }*/
 
   public void joinConversation(String name, String password) {
     final ConversationSummary previous = clientContext.conversation.getCurrent();

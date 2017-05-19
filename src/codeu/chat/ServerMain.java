@@ -35,9 +35,6 @@ final class ServerMain {
 
   public static void main(String[] args) {
 
-    DataController.clearDatabase();
-    DataController.makeDatabase();
-
     Logger.enableConsoleOutput();
 
     try {
@@ -53,14 +50,13 @@ final class ServerMain {
 
     final int myPort = Integer.parseInt(args[2]);
 
-    final RemoteAddress relayAddress = args.length > 3 ?
-                                       RemoteAddress.parse(args[3]) :
-                                       null;
+    final RemoteAddress relayAddress = args.length > 3 ? RemoteAddress.parse(args[3]) : null;
 
-    try (
-        final ConnectionSource serverSource = ServerConnectionSource.forPort(myPort);
-        final ConnectionSource relaySource = relayAddress == null ? null : new ClientConnectionSource(relayAddress.host, relayAddress.port)
-    ) {
+    try (final ConnectionSource serverSource = ServerConnectionSource.forPort(myPort);
+        final ConnectionSource relaySource =
+            relayAddress == null
+                ? null
+                : new ClientConnectionSource(relayAddress.host, relayAddress.port)) {
 
       LOG.info("Starting server...");
       runServer(id, secret, serverSource, relaySource);
@@ -68,18 +64,13 @@ final class ServerMain {
     } catch (IOException ex) {
 
       LOG.error(ex, "Failed to establish connections");
-
     }
   }
 
-  private static void runServer(Uuid id,
-                                byte[] secret,
-                                ConnectionSource serverSource,
-                                ConnectionSource relaySource) {
+  private static void runServer(
+      Uuid id, byte[] secret, ConnectionSource serverSource, ConnectionSource relaySource) {
 
-    final Relay relay = relaySource == null ?
-                        new NoOpRelay() :
-                        new RemoteRelay(relaySource);
+    final Relay relay = relaySource == null ? new NoOpRelay() : new RemoteRelay(relaySource);
 
     final Server server = new Server(id, secret, relay);
 
