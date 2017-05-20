@@ -17,8 +17,6 @@ package codeu.chat.server;
 import codeu.chat.common.*;
 import codeu.chat.common.Time;
 import codeu.chat.util.Logger;
-import codeu.chat.server.DataController;
-
 
 public final class Controller implements RawController, BasicController {
 
@@ -59,7 +57,6 @@ public final class Controller implements RawController, BasicController {
     if (foundUser != null && foundConversation != null && isIdFree(id)) {
 
       message = new Message(id, Uuids.NULL, Uuids.NULL, creationTime, author, body);
-      DataController.addMessage(id.id(), author.id(), conversation.id(), body, creationTime.toString());
       model.add(message);
       LOG.info("Message added: %s", message.id);
 
@@ -107,7 +104,6 @@ public final class Controller implements RawController, BasicController {
 
       user = new User(id, name, creationTime, PasswordHash, salt);
       System.out.printf("ID: %s\t Name:%s\n Hash:%s\n Salt:%s\t Time:%s\n", ""+id.id(), name, PasswordHash, salt, creationTime.toString());
-      DataController.addUser(id.id(), name, PasswordHash, salt, creationTime.toString());
 
       model.add(user);
 
@@ -134,7 +130,6 @@ public final class Controller implements RawController, BasicController {
 
     if (foundOwner != null && isIdFree(id)) {
       conversation = new Conversation(id, owner, creationTime, title, passHash, salt);
-      DataController.addConversation(id.id(), owner.id(), creationTime.toString(), title, passHash, salt);
       model.add(conversation);
 
       LOG.info("Conversation added: " + conversation.id);
