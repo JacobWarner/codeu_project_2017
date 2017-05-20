@@ -103,7 +103,6 @@ public final class Controller implements RawController, BasicController {
     if (isIdFree(id)) {
 
       user = new User(id, name, creationTime, PasswordHash, salt);
-      System.out.printf("ID: %s\t Name:%s\n Hash:%s\n Salt:%s\t Time:%s\n", ""+id.id(), name, PasswordHash, salt, creationTime.toString());
 
       model.add(user);
 

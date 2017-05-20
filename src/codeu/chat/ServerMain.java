@@ -18,7 +18,6 @@ package codeu.chat;
 import java.io.IOException;
 
 import codeu.chat.common.*;
-import codeu.chat.server.DataController;
 import codeu.chat.server.NoOpRelay;
 import codeu.chat.server.RemoteRelay;
 import codeu.chat.server.Server;
