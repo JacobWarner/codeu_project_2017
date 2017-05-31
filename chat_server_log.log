@@ -1,0 +1,3273 @@
+May 18, 2017 2:54:35 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 2:54:36 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 2:54:38 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 2:54:42 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 2:54:42 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 2:54:42 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 2:54:42 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 2:54:42 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 2:54:42 PM codeu.chat.server.Controller lambda$watchUsers$0
+INFO: Watching users... Waiting for events.
+May 18, 2017 2:54:42 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:54:42 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 2:54:42 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 2:54:47 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:54:52 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:54:57 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:55:02 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:55:07 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:55:12 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:55:17 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:55:22 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 2:55:27 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:06 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 3:18:06 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 3:18:07 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 3:18:09 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 3:18:09 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 3:18:09 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 3:18:09 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 3:18:10 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 3:18:10 PM codeu.chat.server.Controller watchUsers
+INFO: Watching users... Waiting for events.
+May 18, 2017 3:18:10 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 3:18:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:10 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 3:18:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:18:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:19:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:20:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:21:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:22:02 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 3:22:02 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 3:22:04 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 3:22:06 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 3:22:06 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 3:22:06 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 3:22:06 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 3:22:06 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 3:22:06 PM codeu.chat.server.Controller watchUsers
+INFO: Watching users... Waiting for events.
+May 18, 2017 3:22:06 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 3:22:06 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 3:22:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:22:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:22:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:27:00 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 3:27:00 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 3:27:01 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 3:27:04 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 3:27:04 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 3:27:04 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 3:27:04 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 3:27:05 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 3:27:05 PM codeu.chat.server.Controller watchUsers
+INFO: Watching users... Waiting for events.
+May 18, 2017 3:27:05 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 3:27:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:27:05 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 3:27:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:27:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:27:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:24 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 3:47:24 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 3:47:26 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 3:47:28 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 3:47:28 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 3:47:28 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 3:47:28 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 3:47:28 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 3:47:28 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 3:47:28 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:28 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 3:47:33 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:38 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:43 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:48 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:53 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:47:58 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:03 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:08 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:13 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:18 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:23 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:28 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:33 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:38 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:43 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:48:48 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:58:30 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 3:58:30 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 3:58:32 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 3:58:34 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 3:58:34 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 3:58:34 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 3:58:34 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 3:58:34 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 3:58:34 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 3:58:34 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 3:58:34 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 3:58:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:58:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:58:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:58:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:58:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:58:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 3:59:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:00:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:01:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:02:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:03:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:04:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:05:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:06:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:07:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:08:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:09:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:10:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:11:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:43 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:12:43 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:12:44 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:12:46 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:12:46 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:12:46 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:12:47 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:12:47 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:12:47 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:12:47 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:12:47 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:47 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:12:49 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:12:52 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:12:57 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:13:02 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:22:51 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:22:52 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:22:53 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:22:55 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:22:55 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:22:55 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:22:55 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:22:55 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:22:55 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:22:55 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:22:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:22:55 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:22:57 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:22:57 PM codeu.chat.database.Database watchUsers
+INFO: Last watched: 18-May-2017 16:22:55.498
+May 18, 2017 4:23:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:23:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:23:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:23:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:23:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:23:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:27:36 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:27:36 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:27:38 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:27:41 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:27:41 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:27:41 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:27:41 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:27:41 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:27:41 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:27:41 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:27:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:27:41 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:27:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:27:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:27:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:28:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:49 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:29:49 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:29:51 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:29:53 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:29:53 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:29:53 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:29:53 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:29:53 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:29:53 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:29:53 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:29:53 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:29:53 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:29:58 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:03 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:08 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:13 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:18 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:23 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:28 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:33 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:38 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:43 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:48 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:53 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:30:58 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:03 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:20 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:31:20 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:31:21 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:31:23 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:31:23 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:31:23 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:31:23 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:31:24 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:31:24 PM codeu.chat.server.Controller lambda$watch$0
+INFO: Watching...
+May 18, 2017 4:31:24 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:31:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:24 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:31:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:31:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:32:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:33:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:34:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:35:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:36:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:37:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:38:52 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:38:52 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:38:53 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:38:56 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:38:56 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:38:56 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:38:56 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:38:56 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:38:56 PM codeu.chat.database.Database watchUsers
+INFO: Watching...
+May 18, 2017 4:38:56 PM codeu.chat.database.Database watchUsers
+SEVERE: 
+WHYYYYY
+
+java.lang.NullPointerException
+	at codeu.chat.database.Database.watchUsers(Database.java:140)
+	at codeu.chat.server.Controller.lambda$watch$0(Controller.java:357)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+May 18, 2017 4:38:56 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:38:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:38:56 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:39:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:39:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:47:37 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:47:37 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:47:39 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:47:45 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:47:45 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:47:45 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:47:45 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:47:45 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:47:45 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 4:47:45 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:47:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:47:45 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:47:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:51:34 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:51:35 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:51:36 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:51:39 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:51:39 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:51:39 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:51:39 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:51:40 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:51:40 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 4:51:40 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:51:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:51:40 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:55:05 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:55:05 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:55:06 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:55:10 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:55:10 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:55:10 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:55:11 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:55:11 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:55:11 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 4:55:11 PM codeu.chat.server.Controller$1 run
+INFO: 
+Errawar: null
+May 18, 2017 4:55:11 PM codeu.chat.server.Controller$1 run
+INFO: 
+Stack Trace:[Ljava.lang.StackTraceElement;@66f06ac9
+May 18, 2017 4:55:11 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 4:55:11 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:55:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:55:11 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:55:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:55:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:58:39 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 4:58:39 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 4:58:41 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 4:58:43 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 4:58:43 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller$1 run
+INFO: 
+Errawar: null
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller$1 run
+INFO: 
+Stack Trace:[Ljava.lang.StackTraceElement;@437b3bc9
+May 18, 2017 4:58:43 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 4:58:43 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 4:58:43 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 4:58:43 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:58:44 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 4:58:48 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 4:58:53 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:00:44 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:00:44 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:00:46 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:00:48 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 5:00:48 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller$1 run
+INFO: WHY IS THIS NULL REEEE
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller$1 run
+INFO: 
+Errawar: null
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller$1 run
+INFO: 
+Stack Trace:[Ljava.lang.StackTraceElement;@2036016b
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:00:48 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:00:48 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:00:48 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:00:48 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:00:53 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:02:32 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:02:32 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:02:34 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:02:38 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 5:02:38 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:02:38 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:02:38 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller$1 run
+INFO: WHY IS THIS NULL REEEE
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller$1 run
+INFO: 
+Errawar: null
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller$1 run
+INFO: 
+Stack Trace:[Ljava.lang.StackTraceElement;@5e96f631
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:02:39 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:02:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:02:39 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:02:39 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:04:20 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:04:20 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:04:22 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:04:24 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 5:04:24 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:04:24 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:04:24 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:04:24 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:04:24 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:04:24 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:04:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:04:24 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:04:24 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:04:24 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:09:34 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:09:34 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:09:36 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:09:37 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 5:09:37 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:09:37 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:09:38 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:09:38 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:09:38 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:09:38 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:09:38 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:09:38 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:09:38 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:09:38 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:09:41 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:09:41 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:09:41 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:09:43 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:09:44 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:09:44 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:09:44 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:09:47 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:09:47 PM codeu.chat.server.Controller$1 run
+INFO: Does it even get here.
+May 18, 2017 5:09:47 PM codeu.chat.server.Controller$1 run
+INFO: Or here?
+May 18, 2017 5:09:48 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:31:48 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:31:48 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:31:50 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:31:54 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 5:31:54 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:31:54 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:31:54 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:31:54 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:31:54 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:31:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:31:54 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:31:54 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:31:59 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:31:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:04 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:09 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:14 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:19 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:24 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:29 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:34 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:39 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:44 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:49 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:54 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:32:59 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:32:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:01 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 18, 2017 5:33:01 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 18, 2017 5:33:01 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:33:01 PM codeu.chat.database.Database write
+INFO: Successfully saved user on database.
+May 18, 2017 5:33:01 PM codeu.chat.server.Controller newUser
+INFO: newUser success (user.id=100.902224867 user.name=Jacob user.time=18-May-2017 17:33:01.398 user.passHash=282cd96a5bd3ad7538ed6ba69248e55a66fc64bbcd2abb92816507f7a7f43)
+May 18, 2017 5:33:01 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 18, 2017 5:33:01 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 18, 2017 5:33:01 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:33:01 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 18, 2017 5:33:01 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 18, 2017 5:33:04 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:09 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:14 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:19 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:24 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:29 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:34 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:39 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:44 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:49 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:54 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:33:59 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:33:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:34:09 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:34:09 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:34:11 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:34:13 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 5:34:13 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:34:14 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:34:14 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:34:14 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:34:14 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:34:14 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:34:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:34:14 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:34:19 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:34:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:51:28 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:51:28 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:51:30 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:51:30 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:51:32 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:51:32 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:51:32 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:51:32 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:51:32 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:51:32 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:51:32 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:51:37 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:51:42 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:51:47 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:51:52 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:51:57 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:02 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:07 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:12 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:17 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:22 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:27 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:32 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:52 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:52:52 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:52:54 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:52:54 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:52:56 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:52:56 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:52:56 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:52:56 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:52:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:52:56 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:52:56 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:52:56 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:53:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:53:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:54:06 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:54:06 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:54:08 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:54:08 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:54:10 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:54:10 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:54:10 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:54:10 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:54:10 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:54:10 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:54:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:54:10 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:54:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:54:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:55:58 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:55:59 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:56:01 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:56:01 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:56:02 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:56:02 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:56:02 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:56:02 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:56:02 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:56:02 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:56:02 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:02 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:56:03 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'unknown operator: $natural' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 5:56:07 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:09 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:56:09 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:56:10 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'unknown operator: $natural' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 5:56:12 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:16 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:56:16 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:56:17 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'unknown operator: $natural' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 5:56:17 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:22 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:23 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:56:23 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:56:24 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'unknown operator: $natural' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 5:56:27 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:30 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:56:30 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:56:31 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'unknown operator: $natural' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 5:56:32 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:51 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 5:56:51 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 5:56:54 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 5:56:54 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 5:56:56 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 5:56:56 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 5:56:56 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 5:56:56 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:56:56 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 5:56:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:56:56 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 5:56:56 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:56:56 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:03 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:03 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:03 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:10 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:10 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:10 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:17 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:17 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:17 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:24 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:24 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:24 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:31 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:31 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:31 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:38 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:38 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:38 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:45 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:45 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:45 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 5:57:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:52 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:52 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:52 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'error processing query: ns=591db844970199516b1747b8_TestDatabase.usersTree: $and
+Sort: {}
+Proj: {}
+ tailable cursor requested on non capped collection' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 5:57:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 5:57:59 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 5:57:59 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 5:57:59 PM codeu.chat.server.Controller$1 run
+INFO: Error: Query failed with error code 2 and error message 'error processing query: ns=591db844970199516b1747b8_TestDatabase.usersTree: $and
+Sort: {}
+Proj: {}
+ tailable cursor requested on non capped collection' on server codeu-shard-00-00-kskbs.mongodb.net:27017
+May 18, 2017 6:05:36 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 18, 2017 6:05:36 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 18, 2017 6:05:38 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 18, 2017 6:05:40 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 18, 2017 6:05:40 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 18, 2017 6:05:40 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 18, 2017 6:05:40 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 18, 2017 6:05:40 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 18, 2017 6:05:40 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 6:05:40 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 6:05:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 6:05:40 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 18, 2017 6:05:40 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 18, 2017 6:05:40 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 6:05:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 6:05:47 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 6:05:47 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 6:05:47 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 18, 2017 6:05:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 18, 2017 6:05:54 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 18, 2017 6:05:54 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 18, 2017 6:05:54 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 30, 2017 10:46:37 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 10:46:37 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 10:46:37 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 30, 2017 10:46:39 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 30, 2017 10:46:39 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 30, 2017 10:46:39 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 30, 2017 10:46:39 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 30, 2017 10:46:39 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 30, 2017 10:46:39 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 30, 2017 10:46:39 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 30, 2017 10:46:39 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 10:46:39 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 10:46:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 10:46:39 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 30, 2017 10:46:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 10:46:53 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 10:46:53 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 10:46:54 PM codeu.chat.database.Database <init>
+INFO: Successful connection to database.
+May 30, 2017 10:46:55 PM codeu.chat.database.Database removeDatabaseCollections
+INFO: Removed the database collections.
+May 30, 2017 10:46:55 PM codeu.chat.database.Database createDatabaseCollections
+INFO: All database collections exist.
+May 30, 2017 10:46:55 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 30, 2017 10:46:55 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 30, 2017 10:46:55 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 30, 2017 10:46:55 PM codeu.chat.server.Controller$1 run
+INFO: Watching...
+May 30, 2017 10:46:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 10:46:55 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 10:46:55 PM codeu.chat.server.Controller$1 run
+INFO: Here? Line 369
+May 30, 2017 10:46:55 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 10:46:56 PM codeu.chat.server.Controller$1 run
+INFO: Or is it working??
+May 30, 2017 11:06:17 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:06:18 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:06:18 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:06:19 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+May 30, 2017 11:06:19 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+May 30, 2017 11:06:20 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+May 30, 2017 11:06:20 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:06:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:20 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:06:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:06:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:07:53 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:07:53 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:07:53 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:07:53 PM codeu.chat.database.ChatAppDatabaseConnection write
+INFO: Successfully saved user on database.
+May 30, 2017 11:07:53 PM codeu.chat.server.Controller newUser
+INFO: newUser success (user.id=100.1198524361 user.name=Blake user.time=30-May-2017 23:07:53.737 user.passHash=2f5fd5cf369c9027ff68d5c3430c27180aee36a16975753416a2ee2a7be7fc6)
+May 30, 2017 11:07:53 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:07:53 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:07:53 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:07:53 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:07:53 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:07:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:21 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:08:21 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:08:21 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:08:21 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:08:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:42 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:08:42 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:08:42 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:08:42 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:08:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:08:56 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:08:56 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:08:56 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:08:57 PM codeu.chat.database.ChatAppDatabaseConnection write
+INFO: Successfully saved conversation on database.
+May 30, 2017 11:08:57 PM codeu.chat.server.Controller newConversation
+INFO: Conversation added: 100.2615090616
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:08:57 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:08:57 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:08:57 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:08:57 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:08:57 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:08:57 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:08:57 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:26 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:26 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:26 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:26 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:27 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:27 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:35 PM codeu.chat.database.ChatAppDatabaseConnection write
+INFO: Successfully saved message on database.
+May 30, 2017 11:09:35 PM codeu.chat.server.Controller newMessage
+INFO: Message added: 100.2133870257
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:35 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.2133870257 range=5
+May 30, 2017 11:09:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:41 PM codeu.chat.database.ChatAppDatabaseConnection write
+INFO: Successfully saved message on database.
+May 30, 2017 11:09:41 PM codeu.chat.server.Controller newMessage
+INFO: Message added: 100.2110917622
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.2133870257 range=1
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:41 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:41 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.2110917622 range=5
+May 30, 2017 11:09:41 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:47 PM codeu.chat.database.ChatAppDatabaseConnection write
+INFO: Successfully saved message on database.
+May 30, 2017 11:09:47 PM codeu.chat.server.Controller newMessage
+INFO: Message added: 100.3781172720
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.2110917622 range=1
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:09:47 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:09:47 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.3781172720 range=5
+May 30, 2017 11:09:47 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:09:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:09:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:24 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:10:24 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:10:24 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 30, 2017 11:10:26 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 3 messages. Failed to load 0 messages.
+May 30, 2017 11:10:26 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:10:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:26 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:10:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:10:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:26 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:26 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:26 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:26 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:29 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:29 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:29 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:29 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:30 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:30 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.2133870257 range=5
+May 30, 2017 11:11:30 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:35 PM codeu.chat.database.ChatAppDatabaseConnection write
+INFO: Successfully saved message on database.
+May 30, 2017 11:11:35 PM codeu.chat.server.Controller newMessage
+INFO: Message added: 100.351456712
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.3781172720 range=1
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 30, 2017 11:11:35 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 30, 2017 11:11:35 PM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.351456712 range=5
+May 30, 2017 11:11:35 PM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 30, 2017 11:11:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:11:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:09 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:22:09 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:22:10 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 30, 2017 11:22:11 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 30, 2017 11:22:11 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:22:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:11 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:22:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:22:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:01 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:06 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:11 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:16 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:21 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:26 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:31 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:36 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:41 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:46 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:51 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:23:56 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:13 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:24:13 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:24:13 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 30, 2017 11:24:15 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 30, 2017 11:24:15 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:24:15 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:24:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:24:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:25:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:10 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:15 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:20 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:25 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:30 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:35 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:40 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:45 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:50 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:26:55 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:00 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:05 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:27 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:27:27 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:27:27 PM codeu.chat.server.Server <init>
+INFO: Database info:
+May 30, 2017 11:27:28 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 30, 2017 11:27:29 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 30, 2017 11:27:29 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:27:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:29 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:27:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:27:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:28:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:29:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:30:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:31:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:14 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:19 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:32:59 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:33:04 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:33:09 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:33:51 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:33:51 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:33:51 PM codeu.chat.server.Server <init>
+INFO: Database info:
+May 30, 2017 11:33:51 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 30, 2017 11:33:53 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 30, 2017 11:33:53 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:33:53 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:33:53 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:33:58 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:03 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:08 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:13 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:18 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:23 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:28 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:33 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:38 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:43 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:34:55 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:35:59 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:48:30 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:48:45 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:48:45 PM codeu.chat.server.Server <init>
+INFO: Database info:Jacob:q71kDgKKvabJCc3q:TestDatabase
+May 30, 2017 11:48:46 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to database, TestDatabase
+May 30, 2017 11:48:47 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 0 users. Failed to load 0 users.
+
+May 30, 2017 11:48:47 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 0 conversations. Failed to load 0 conversations.
+
+May 30, 2017 11:48:47 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 0 messages. Failed to load 0 messages.
+
+May 30, 2017 11:48:47 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:48:47 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:48:47 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:48:52 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:48:57 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:02 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:07 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:20 PM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 30, 2017 11:49:22 PM codeu.chat.ServerMain main
+INFO: Starting server...
+May 30, 2017 11:49:22 PM codeu.chat.server.Server <init>
+INFO: Database info:null
+May 30, 2017 11:49:23 PM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 30, 2017 11:49:24 PM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 30, 2017 11:49:24 PM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 30, 2017 11:49:24 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:24 PM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 30, 2017 11:49:29 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:34 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:39 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:44 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:49 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 30, 2017 11:49:54 PM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:06:57 AM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 31, 2017 12:07:02 AM codeu.chat.ServerMain main
+INFO: Starting server...
+May 31, 2017 12:07:02 AM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 31, 2017 12:07:02 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:03 AM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 31, 2017 12:07:03 AM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 31, 2017 12:07:03 AM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 31, 2017 12:07:03 AM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 31, 2017 12:07:04 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 31, 2017 12:07:04 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 31, 2017 12:07:04 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 31, 2017 12:07:04 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 31, 2017 12:07:04 AM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 31, 2017 12:07:04 AM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 31, 2017 12:07:04 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:07 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:12 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:17 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:22 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:27 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:32 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:37 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:42 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:47 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:47 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:07:47 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:07:47 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:47 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:07:52 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:07:52 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:52 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:07:52 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:07:52 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:07:53 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:07:53 AM codeu.chat.server.View getMessages
+INFO: in getMessage: UUID=100.2133870257 range=5
+May 31, 2017 12:07:53 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:07:57 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:08:02 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:08:04 AM codeu.chat.ServerMain runServer
+INFO: Connection established.
+May 31, 2017 12:08:04 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 12:08:04 AM codeu.chat.server.Server$2 run
+INFO: Handling connection...
+May 31, 2017 12:08:04 AM codeu.chat.server.Server$2 run
+INFO: Connection handled: ACCEPTED
+May 31, 2017 12:08:07 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:08:12 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:08:17 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:08:22 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 12:08:27 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 1:26:43 AM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 31, 2017 1:26:46 AM codeu.chat.ServerMain main
+INFO: Starting server...
+May 31, 2017 1:26:47 AM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 31, 2017 1:26:47 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 31, 2017 1:26:48 AM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 31, 2017 1:26:48 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 1:26:52 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 1:26:57 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...

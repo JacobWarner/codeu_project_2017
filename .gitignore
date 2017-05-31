@@ -1,0 +1,13 @@
+# Java
+bin
+build
+*.class
+AndroidGUIClient
+
+# JetBrains IDE
+.idea
+*.iml
+
+# Other
+*.log
+*.lck

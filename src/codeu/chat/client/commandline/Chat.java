@@ -353,5 +353,4 @@ public final class Chat {
   public void joinConversation(String name){
     joinConversation(name, "password");
   }
-
 }
