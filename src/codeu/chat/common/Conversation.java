@@ -88,7 +88,7 @@ public final class Conversation {
     this.passHash = passHash;
     this.salt = salt;
 
-    this.summary = new ConversationSummary(id, owner, creation, title);
+    this.summary = new ConversationSummary(id, owner, creation, title, passHash, salt);
   }
 
   public String getPassHash() {
@@ -97,5 +97,10 @@ public final class Conversation {
 
   public String getSalt() {
     return salt;
+  }
+
+  public boolean isPassword(String password){
+    String passwordHash = Password.getHashCode(password, this.salt);
+    return(passwordHash.equals(passHash));
   }
 }

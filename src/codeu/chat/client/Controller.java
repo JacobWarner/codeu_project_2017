@@ -32,7 +32,7 @@ import codeu.chat.util.connections.ConnectionSource;
 
 public class Controller implements BasicController {
 
-  private final static Logger.Log LOG = Logger.newLog(Controller.class);
+  private static final Logger.Log LOG = Logger.newLog(Controller.class);
 
   private final ConnectionSource source;
 
@@ -65,8 +65,6 @@ public class Controller implements BasicController {
     return response;
   }
 
-
-
   @Override
   public User newUser(String name, String passwordHash, String salt) {
 
@@ -78,7 +76,6 @@ public class Controller implements BasicController {
       Serializers.STRING.write(connection.out(), name);
       Serializers.STRING.write(connection.out(), passwordHash);
       Serializers.STRING.write(connection.out(), salt);
-
 
       LOG.info("newUser: Request completed.");
 
@@ -97,7 +94,7 @@ public class Controller implements BasicController {
   }
 
   @Override
-  public Conversation newConversation(String title, Uuid owner, String passHash, String salt)  {
+  public Conversation newConversation(String title, Uuid owner, String passHash, String salt) {
 
     Conversation response = null;
 

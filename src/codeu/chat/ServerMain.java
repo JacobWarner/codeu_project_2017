@@ -18,8 +18,8 @@ package codeu.chat;
 import java.io.IOException;
 import java.util.Scanner;
 
-import codeu.chat.common.Relay;
-import codeu.chat.common.Secret;
+
+import codeu.chat.common.*;
 import codeu.chat.server.NoOpRelay;
 import codeu.chat.server.RemoteRelay;
 import codeu.chat.server.Server;
@@ -66,7 +66,6 @@ final class ServerMain {
                                        RemoteAddress.parse(args[4]) :
                                        null;
 
-
     Scanner scan = new Scanner(System.in);
     System.out.println("\n\n Would you like to connect to your own MongoDB database (y/n)? Otherwise, it will connect to the default database.");
     char q = scan.next().charAt(0);
@@ -90,7 +89,6 @@ final class ServerMain {
     } catch (IOException ex) {
 
       LOG.error(ex, "Failed to establish connections");
-
     }
   }
 
@@ -100,9 +98,7 @@ final class ServerMain {
                                 ConnectionSource relaySource,
                                 String databaseInfo){
 
-    final Relay relay = relaySource == null ?
-                        new NoOpRelay() :
-                        new RemoteRelay(relaySource);
+    final Relay relay = relaySource == null ? new NoOpRelay() : new RemoteRelay(relaySource);
 
     final Server server = new Server(id, secret, relay, databaseInfo);
 

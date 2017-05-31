@@ -14,7 +14,6 @@
 
 package codeu.chat.client.commandline;
 
-import java.io.Console;
 import java.util.Scanner;
 
 import codeu.chat.client.ClientContext;
@@ -56,7 +55,8 @@ public final class Chat {
     System.out.println("Conversation commands:");
     System.out.println("   c-add <title>    - add a new conversation.");
     System.out.println("   c-list-all       - list all conversations known to system.");
-    System.out.println("   c-select <index> - select conversation from list.");
+    System.out.println("   c-public <conversation> - select public conversation to join.");
+    System.out.println("   c-private <conversation> - select private conversation to join");
     System.out.println("Message commands:");
     System.out.println("   m-add <body>     - add a new message to the current conversation.");
     System.out.println("   m-list-all       - list all messages in the current conversation.");
@@ -157,9 +157,29 @@ public final class Chat {
 
     } else if (token.equals("c-select")) {
 
-      selectConversation(lineScanner);
+      System.out.println("Please use c-private or c-public");
 
-    } else if (token.equals("m-add")) {
+    } else if (token.equals("c-private")) {
+
+      if (!tokenScanner.hasNext()) {
+        System.out.println("ERROR: No conversation name supplied.");
+      } else {
+        String name = tokenScanner.nextLine().trim();
+        System.out.print("Please enter the password: ");
+        String password = lineScanner.next().trim();
+        joinConversation(name, password);
+      }
+
+    } else if (token.equals("c-public")){
+      if (!tokenScanner.hasNext()) {
+        System.out.println("ERROR: No conversation name supplied.");
+      } else {
+        String name = tokenScanner.nextLine().trim();
+        joinConversation(name, "password");
+      }
+    }
+
+    else if (token.equals("m-add")) {
 
       if (!clientContext.user.hasCurrent()) {
         System.out.println("ERROR: Not signed in.");
@@ -316,33 +336,21 @@ public final class Chat {
     return alive;
   }
 
-  public void selectConversation(Scanner lineScanner) {
-
-    clientContext.conversation.updateAllConversations(false);
-    final int selectionSize = clientContext.conversation.conversationsCount();
-    System.out.format("Selection contains %d entries.\n", selectionSize);
-
+  public void joinConversation(String name, String password) {
     final ConversationSummary previous = clientContext.conversation.getCurrent();
     ConversationSummary newCurrent = null;
 
-    if (selectionSize == 0) {
-      System.out.println("Nothing to select.");
-    } else {
-      final ListNavigator<ConversationSummary> navigator =
-          new ListNavigator<ConversationSummary>(
-              clientContext.conversation.getConversationSummaries(), lineScanner, PAGE_SIZE);
-      if (navigator.chooseFromList()) {
-        newCurrent = navigator.getSelectedChoice();
-        clientContext.message.resetCurrent(newCurrent != previous);
-        System.out.format("OK. Conversation \"%s\" selected.\n", newCurrent.title);
-      } else {
-        System.out.println("OK. Current Conversation is unchanged.");
-      }
-    }
-    if (newCurrent != previous) {
-      clientContext.conversation.setCurrent(newCurrent);
+    clientContext.conversation.joinConversation(name, password);
+    newCurrent = clientContext.conversation.getCurrent();
+
+    //Executed if the selected conversation exists and is new
+    if(newCurrent!=null && (newCurrent != previous)){
+      clientContext.message.resetCurrent(true);
       clientContext.conversation.updateAllConversations(true);
     }
   }
 
+  public void joinConversation(String name){
+    joinConversation(name, "password");
+  }
 }

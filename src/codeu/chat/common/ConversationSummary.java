@@ -34,7 +34,8 @@ public final class ConversationSummary implements ListViewable {
       Uuid.SERIALIZER.write(out, value.owner);
       Time.SERIALIZER.write(out, value.creation);
       Serializers.STRING.write(out, value.title);
-
+      Serializers.STRING.write(out, value.getPasswordHash());
+      Serializers.STRING.write(out, value.getSalt());
     }
 
     @Override
@@ -44,7 +45,9 @@ public final class ConversationSummary implements ListViewable {
           Uuid.SERIALIZER.read(in),
           Uuid.SERIALIZER.read(in),
           Time.SERIALIZER.read(in),
-          Serializers.STRING.read(in)
+          Serializers.STRING.read(in),
+              Serializers.STRING.read(in),
+              Serializers.STRING.read(in)
       );
 
     }
@@ -54,13 +57,17 @@ public final class ConversationSummary implements ListViewable {
   public final Uuid owner;
   public final Time creation;
   public final String title;
+  private final String passwordHash;
+  private final String salt;
 
-  public ConversationSummary(Uuid id, Uuid owner, Time creation, String title) {
+  public ConversationSummary(Uuid id, Uuid owner, Time creation, String title, String passwordHash, String salt) {
 
     this.id = id;
     this.owner = owner;
     this.creation = creation;
     this.title = title;
+    this.passwordHash = passwordHash;
+    this.salt = salt;
 
   }
 
@@ -68,5 +75,25 @@ public final class ConversationSummary implements ListViewable {
   @Override
   public String listView() {
     return title;
+  }
+
+  public String getPasswordHash(){
+    return passwordHash;
+  }
+
+  public String getSalt(){
+    return salt;
+  }
+
+  public boolean isPassword(String password){
+    String newPassHash = Password.getHashCode(password, salt);
+    return (passwordHash.equals(newPassHash));
+  }
+
+  public boolean hasPassword(){
+    if(passwordHash.equals("password"))
+      return false;
+    else
+      return true;
   }
 }
