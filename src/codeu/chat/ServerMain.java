@@ -62,7 +62,7 @@ final class ServerMain {
     // of the server.
     final String persistentPath = args[3];
 
-    final RemoteAddress relayAddress = (args.length > 4 && args[4] != "") ?
+    final RemoteAddress relayAddress = args.length > 4  ?
                                        RemoteAddress.parse(args[4]) :
                                        null;
 

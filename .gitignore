@@ -9,6 +9,5 @@ AndroidGUIClient
 *.iml
 
 # Other
-*.sh
 *.log
 *.lck

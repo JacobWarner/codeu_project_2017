@@ -13,10 +13,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+cd ..
 
-set -e
+HOST="$1"
+PORT="$2"
 
-mkdir -p bin
+if [[ "$HOST" == "" || "$PORT" == "" ]] ; then
+  echo 'usage: <HOST> <PORT>'
+  exit 1
+fi
 
-javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d ./bin -sourcepath ./src -cp ./third_party/"*"
-javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d ./bin -sourcepath ./test -cp ./third_party/"*"
+cd './bin'
+java codeu.chat.ClientMain "$HOST@$PORT"

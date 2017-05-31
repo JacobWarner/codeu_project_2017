@@ -13,10 +13,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+cd ..
 
-set -e
+LOCAL_MACHINE="localhost@2007"
 
-mkdir -p bin
+cd './bin'
 
-javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d ./bin -sourcepath ./src -cp ./third_party/"*"
-javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d ./bin -sourcepath ./test -cp ./third_party/"*"
+java codeu.chat.SimpleGuiClientMain "$LOCAL_MACHINE"

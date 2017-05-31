@@ -13,10 +13,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+cd ..
 
-set -e
+PORT="$1"
+TEAM_FILE="$2"
 
-mkdir -p bin
+if [[ "$PORT" == "" || "$TEAM_FILE" == "" ]] ; then
+  echo 'usage: <PORT> <TEAM FILE>'
+  exit 1
+fi
 
-javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d ./bin -sourcepath ./src -cp ./third_party/"*"
-javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d ./bin -sourcepath ./test -cp ./third_party/"*"
+if [ ! -f "$TEAM_FILE" ] ; then
+  echo "No file at $TEAM_FILE"
+  exit 1
+fi
+
+cd './bin'
+java codeu.chat.RelayMain "$PORT" "$TEAM_FILE"

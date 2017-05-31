@@ -3201,3 +3201,73 @@ May 31, 2017 12:08:22 AM codeu.chat.server.Server$1 run
 INFO: Reading update from relay...
 May 31, 2017 12:08:27 AM codeu.chat.server.Server$1 run
 INFO: Reading update from relay...
+May 31, 2017 1:26:43 AM codeu.chat.ServerMain main
+INFO: ============================= START OF LOG =============================
+May 31, 2017 1:26:46 AM codeu.chat.ServerMain main
+INFO: Starting server...
+May 31, 2017 1:26:47 AM codeu.chat.database.ChatAppDatabaseConnection <init>
+INFO: Successful connection to default database.
+May 31, 2017 1:26:47 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadUsers
+INFO: Loaded User: 
+id: 100.1198524361
+name: Blake
+creation: 30-May-2017 23:07:53.737
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadUsers
+INFO: Successfully loaded 1 users. Failed to load 0 users.
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadConversations
+INFO: Loaded Conversation: 
+id: 100.2615090616
+title: TestConvo
+owner: Blake
+creation: 30-May-2017 23:08:56.930
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadConversations
+INFO: Successfully loaded 1 conversations. Failed to load 0 conversations.
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2133870257
+author: Blake
+conversation: TestConvo
+content: FIRST MESSAGE
+creation: 30-May-2017 23:09:35.205
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.2110917622
+author: Blake
+conversation: TestConvo
+content: SECOND MESSAGE
+creation: 30-May-2017 23:09:41.155
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.3781172720
+author: Blake
+conversation: TestConvo
+content: THIRD MESSAGE
+creation: 30-May-2017 23:09:47.825
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Loaded Message: 
+id: 100.351456712
+author: Blake
+conversation: TestConvo
+content: WOOO IT WORKED
+creation: 30-May-2017 23:11:35.766
+
+May 31, 2017 1:26:48 AM codeu.chat.server.Controller loadMessages
+INFO: Successfully loaded 4 messages. Failed to load 0 messages.
+
+May 31, 2017 1:26:48 AM codeu.chat.ServerMain runServer
+INFO: Created server.
+May 31, 2017 1:26:48 AM codeu.chat.ServerMain runServer
+INFO: Established connection...
+May 31, 2017 1:26:52 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
+May 31, 2017 1:26:57 AM codeu.chat.server.Server$1 run
+INFO: Reading update from relay...
