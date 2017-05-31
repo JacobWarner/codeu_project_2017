@@ -15,8 +15,9 @@
 package codeu.chat.server;
 
 import static org.junit.Assert.*;
-import org.junit.Test;
-import org.junit.Before;
+
+import codeu.chat.database.ChatAppDatabaseConnection;
+import org.junit.*;
 
 import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
@@ -29,15 +30,22 @@ public final class RawControllerTest {
 
   private Model model;
   private RawController controller;
+  private static ChatAppDatabaseConnection database;
 
   private Uuid userId;
   private Uuid conversationId;
   private Uuid messageId;
 
+  @BeforeClass
+  public static void onlyOnce() {
+    database = new ChatAppDatabaseConnection("Tester", "jJZn8LnLucZUJqph", "TesterDatabase");
+  }
+
   @Before
   public void doBefore() {
     model = new Model();
-    controller = new Controller(Uuid.NULL, model);
+
+    controller = new Controller(Uuid.NULL, model, database);
 
     userId = new Uuid(1);
     conversationId = new Uuid(2);
@@ -94,18 +102,30 @@ public final class RawControllerTest {
     assertTrue("Check that the message has the correct id", Uuid.equals(message.id, messageId));
   }
 
-  private static Uuid newTestId(final int id) {
-    return Uuid.complete(
-        new Uuid() {
-          @Override
-          public Uuid root() {
-            return null;
-          }
+  @Test
+  public void testWriteDatabase() {
+    final User user =
+            controller.newUser(userId, "user", Time.now(), "test passwordHash", "saltCode");
+    final Conversation conversation =
+            controller.newConversation(
+                    conversationId, "conversation", user.id, Time.now(), "passHash", "salt");
+    final Message message =
+            controller.newMessage(messageId, user.id, conversation.id, "Hello World", Time.now());
 
-          @Override
-          public int id() {
-            return id;
-          }
-        });
+    assertTrue("Check the writing of a user to the database.", database.write(user));
+    assertTrue("Check the writing of a conversation to the database.", database.write(conversation));
+    assertTrue("Check the writing of a  to the database.", database.write(message, conversation.id));
+  }
+
+  /**
+   * Fongo (in-memory java implementation of MongoDB) wasn't working for testing, so I decided to
+   * create a different database purely for testing. However, the database is free, so I am limited
+   * on space. So, I must clean it after every test.
+   */
+
+  @AfterClass
+  public static void cleanUp() {
+    database.removeDatabaseCollections();
+    database.getDatabase().drop();
   }
 }
