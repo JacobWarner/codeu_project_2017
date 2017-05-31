@@ -12,33 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * NOTE: The Relay server is not up-to-date with our additions (such as passwords) because
+ * the Relay server was not of high priority.
+ */
 
 package codeu.chat.server;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Arrays;
 import java.util.Collection;
 
 import codeu.chat.common.Conversation;
-import codeu.chat.common.Conversation;
 import codeu.chat.common.ConversationSummary;
-import codeu.chat.common.LinearUuidGenerator;
 import codeu.chat.common.Message;
 import codeu.chat.common.NetworkCode;
 import codeu.chat.common.Relay;
 import codeu.chat.common.User;
+import codeu.chat.database.ChatAppDatabaseConnection;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Serializers;
 import codeu.chat.util.Time;
 import codeu.chat.util.Timeline;
 import codeu.chat.util.Uuid;
 import codeu.chat.util.connections.Connection;
-import codeu.chat.database.Database;
-import codeu.chat.database.Packer;
 
 public final class Server {
 
@@ -54,16 +53,22 @@ public final class Server {
   private final Model model = new Model();
   private final View view = new View(model);
   private final Controller controller;
+  private String[] DBInfo = new String[3];
 
   private final Relay relay;
   private Uuid lastSeen = Uuid.NULL;
 
-  public Server(final Uuid id, final byte[] secret, final Relay relay){
+  public Server(final Uuid id, final byte[] secret, final Relay relay, final String databaseInfo){
 
     this.id = id;
     this.secret = Arrays.copyOf(secret, secret.length);
 
-    this.controller = new Controller(id, model, new Database());
+    if(databaseInfo == null){
+      this.controller = new Controller(id, model, new ChatAppDatabaseConnection());
+    }else{
+      this.DBInfo = databaseInfo.split(":");
+      this.controller = new Controller(id, model, new ChatAppDatabaseConnection(DBInfo[0], DBInfo[1], DBInfo[2]));
+    }
 
     this.relay = relay;
 
@@ -88,6 +93,8 @@ public final class Server {
         timeline.scheduleIn(RELAY_REFRESH_MS, this);
       }
     });
+
+    this.controller.loadDatabase();
   }
 
   public void handleConnection(final Connection connection) {
@@ -265,7 +272,7 @@ public final class Server {
 
     final Relay.Bundle.Component relayUser = bundle.user();
     final Relay.Bundle.Component relayConversation = bundle.conversation();
-    final Relay.Bundle.Component relayMessage = bundle.user();
+    final Relay.Bundle.Component relayMessage = bundle.message();
 
     User user = model.userById().first(relayUser.id());
 
@@ -299,6 +306,7 @@ public final class Server {
     }
   }
 
+  //See NOTE at the top
   private Runnable createSendToRelayEvent(final Uuid userId,
                                           final Uuid conversationId,
                                           final Uuid messageId) {

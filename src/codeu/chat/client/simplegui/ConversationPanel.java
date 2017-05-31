@@ -143,6 +143,8 @@ public final class ConversationPanel extends JPanel {
           final String data = objectList.getSelectedValue();
           final ConversationSummary cs = ConversationPanel.this.lookupByTitle(data, index);
 
+          clientContext.conversation.setCurrent(cs);
+
           messagePanel.update(cs);
         }
       }

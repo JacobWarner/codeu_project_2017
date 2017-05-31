@@ -1,13 +1,14 @@
 package codeu.chat.database;
-import codeu.chat.util.Time;
+
+/**
+ * Created by Jacob Warner on May 18, 2017
+ */
+
 import codeu.chat.util.Uuid;
 import codeu.chat.common.Conversation;
-import codeu.chat.common.ConversationSummary;
 import codeu.chat.common.Message;
 import codeu.chat.common.User;
 import org.bson.Document;
-
-import java.io.IOException;
 
 public class Packer {
 
@@ -17,7 +18,6 @@ public class Packer {
      * @return a Document derived from Message
      */
     public static Document packUser(User user) {
-        System.out.println("Packing UserID: " + user.id.toString());
         Document doc = new Document("id", user.id.id())
                 .append("name", user.name)
                 .append("creation", user.creation.inMs())
@@ -26,11 +26,11 @@ public class Packer {
         return doc;
     }
 
-
     /**
      * Converts a Message object to a Document
      * @param message: the Message to be converted
-     * @return a Document derived from Message
+     * @param conversation: the ID of the Conversation the Message belongs to
+     * @return a Document object derived from Message
      */
     public static Document packMessage(Message message, Uuid conversation) {
         Document doc = new Document("id", message.id.id())

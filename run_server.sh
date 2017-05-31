@@ -19,6 +19,7 @@ TEAM_SECRET="$2"
 PORT="$3"
 PERSISTENT_DIR="$4"
 RELAY_ADDRESS="$5"
+DATABASE_LOGIN_INFO="$6"
 
 if [[ "$TEAM_ID" == "" || "$TEAM_SECRET" == "" || "$PORT" == "" || "$PERSISTENT_DIR" == "" ]] ; then
   echo 'usage: <TEAM ID> <TEAM SECRET> <PORT> <PERSISTENT> [RELAY ADDRESS]'
@@ -48,8 +49,8 @@ if [ "$RELAY_ADDRESS" == "" ] ; then
       "$TEAM_SECRET" \
       "$PORT" \
       "$PERSISTENT_DIR"
-else
-  java codeu.chat.ServerMain \
+el
+  java -cp "third_party/*;bin" codeu.chat.ServerMain \
       "$TEAM_ID" \
       "$TEAM_SECRET" \
       "$PORT" \

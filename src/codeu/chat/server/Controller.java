@@ -14,45 +14,36 @@
 
 package codeu.chat.server;
 
-import java.util.Collection;
-
 import codeu.chat.common.BasicController;
 import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
 import codeu.chat.common.RandomUuidGenerator;
 import codeu.chat.common.RawController;
 import codeu.chat.common.User;
-import codeu.chat.database.Database;
+import codeu.chat.database.ChatAppDatabaseConnection;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Time;
 import codeu.chat.util.Uuid;
 import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
-import org.bson.BsonDocument;
 import org.bson.Document;
-import org.bson.codecs.configuration.CodecRegistry;
-import org.bson.conversions.Bson;
 
 public final class Controller implements RawController, BasicController {
 
   private static final Logger.Log LOG = Logger.newLog(Controller.class);
 
   private final Model model;
-  private final Database database;
+  private final ChatAppDatabaseConnection database;
 
   private final Uuid.Generator uuidGenerator;
   private final Uuid serverId;
 
-  public Controller(Uuid serverId, Model model, Database database) {
+  public Controller(Uuid serverId, Model model, ChatAppDatabaseConnection database) {
     this.model = model;
     this.uuidGenerator = new RandomUuidGenerator(serverId, System.currentTimeMillis());
     this.serverId = serverId;
     this.database = database;
-
-    loadDatabase();
   }
 
   @Override
@@ -118,13 +109,7 @@ public final class Controller implements RawController, BasicController {
         if (!foundConversation.users.contains(foundUser)) {
           foundConversation.users.add(foundUser.id);
         }
-      }else{
-        message = null;
-        LOG.info("New message failure. Could not save to database: (message.id=%s message.author=%s message.conversation=%s message.creation=%s message.body=%s)",
-                id,author,conversation,creationTime,body);
       }
-
-
     }
 
     return message;
@@ -145,9 +130,6 @@ public final class Controller implements RawController, BasicController {
         LOG.info(
                 "newUser success (user.id=%s user.name=%s user.time=%s user.passHash=%s)",
                 id, name, creationTime, PasswordHash);
-      }else{
-        LOG.info("New user failure. Could  not save to database: (user.id=%s user.name=%s user.time=%s)",
-                id,name,creationTime);
       }
 
 
@@ -188,6 +170,11 @@ public final class Controller implements RawController, BasicController {
     return conversation;
   }
 
+  /**
+   * Makes the serverID the identifier for Uuids (needed for loading/saving data)
+   * @param id
+   * @return Uuid object
+   */
   public Uuid buildUuid(int id){
     return new Uuid(serverId, id);
   }
@@ -199,7 +186,7 @@ public final class Controller implements RawController, BasicController {
     for (candidate = uuidGenerator.make(); isIdInUse(candidate); candidate = uuidGenerator.make()) {
 
       // Assuming that "randomUuid" is actually well implemented, this
-      // loop should never be needed, but just incase make sure that the
+      // loop should never be needed, but just in case make sure that the
       // Uuid is not actually in use before returning it.
 
     }
@@ -217,17 +204,20 @@ public final class Controller implements RawController, BasicController {
     return !isIdInUse(id);
   }
 
-  private void loadDatabase(){
+  public void loadDatabase(){
     loadUsers();
     loadConversations();
     loadMessages();
-    System.out.println("----------------------------LOADED DATABASE----------------------------");
   }
 
   private void loadUsers(){
-    MongoCollection<Document> users = database.database.getCollection("users");
+    MongoCollection<Document> users = database.getUserCollection();
+    int errorCount = 0;
+    int userCount = 0;
 
-    for(Document doc : users.find()){
+    try(MongoCursor<Document> cursor = users.find().iterator()){
+      while(cursor.hasNext()){
+        Document doc = cursor.next();
         final Uuid userID = buildUuid(doc.getInteger("id"));
 
         if(isIdFree(userID)){
@@ -238,85 +228,110 @@ public final class Controller implements RawController, BasicController {
 
           model.add(new User(userID, name, creation, passHash, salt));
           LOG.info("Loaded User: \nid: %s\nname: %s\ncreation: %s\n", userID, name, creation);
+          userCount++;
         }else{
           LOG.info("Loading User failure. ID already in use: " + userID);
+          errorCount++;
         }
+      }
+      LOG.info("Successfully loaded %d users. Failed to load %d users.\n",userCount,errorCount);
     }
+
+
   }
 
   private void loadConversations(){
-    MongoCollection<Document> conversations = database.database.getCollection("conversations");
+    MongoCollection<Document> conversations = database.getConversationsCollection();
+    int errorCount = 0;
+    int convoCount = 0;
 
-    for(Document doc : conversations.find()){
-      final Uuid conversationID = buildUuid(doc.getInteger("id"));
-      final Uuid ownerID = buildUuid(doc.getInteger("owner"));
-      final User foundOwner = model.userById().first(ownerID);
+    try(MongoCursor<Document> cursor = conversations.find().iterator()){
+      while(cursor.hasNext()){
+        Document doc = cursor.next();
 
-      if(foundOwner != null && isIdFree(conversationID)){
-        String title = doc.getString("title");
-        Time creation = Time.fromMs(doc.getLong("creation"));
-        String passHash = doc.getString("passHash");
-        String salt = doc.getString("salt");
+        final Uuid conversationID = buildUuid(doc.getInteger("id"));
+        final Uuid ownerID = buildUuid(doc.getInteger("owner"));
+        final User foundOwner = model.userById().first(ownerID);
 
-        model.add(new Conversation(conversationID, foundOwner.id, creation, title, passHash, salt));
-        LOG.info("Loaded Conversation: \nid: %s\ntitle: %s\nowner: %s\ncreation: %s\n", conversationID, title, foundOwner.name, creation);
-      }else{
-        LOG.info("Loading Conversation failure. Owner not found or ID already in use: " + conversationID);
+        if(foundOwner != null && isIdFree(conversationID)){
+          String title = doc.getString("title");
+          Time creation = Time.fromMs(doc.getLong("creation"));
+          String passHash = doc.getString("passHash");
+          String salt = doc.getString("salt");
+
+          model.add(new Conversation(conversationID, foundOwner.id, creation, title, passHash, salt));
+          LOG.info("Loaded Conversation: \nid: %s\ntitle: %s\nowner: %s\ncreation: %s\n", conversationID, title, foundOwner.name, creation);
+          convoCount++;
+        }else{
+          LOG.info("Loading Conversation failure. Owner not found or ID already in use: " + conversationID);
+          errorCount++;
+        }
       }
+      LOG.info("Successfully loaded %d conversations. Failed to load %d conversations.\n",convoCount,errorCount);
     }
+
+
   }
 
   private void loadMessages(){
-    MongoCollection<Document> messages = database.database.getCollection("messages");
-    FindIterable<Document> sortedMessages = messages.find().sort(new BasicDBObject("creation",1));
+    MongoCollection<Document> messages = database.getMessagesCollection();
+    int errorCount = 0;
+    int messageCount = 0;
 
-    for(Document doc : sortedMessages){
-      final Uuid messageID = buildUuid(doc.getInteger("id"));
-      Time creation = Time.fromMs(doc.getLong("creation"));
-      final Uuid conversationID = buildUuid(doc.getInteger("conversation"));
-      Conversation foundConversation = model.conversationById().first(conversationID);
-      final Uuid authorID = buildUuid(doc.getInteger("author"));
-      User foundUser = model.userById().first(authorID);
-      String content = doc.getString("content");
+    //Sort messages, oldest-to-newest
+    try(MongoCursor<Document> cursor = messages.find().sort(new BasicDBObject("creation",1)).iterator()){
 
-      if(foundUser != null && foundConversation != null && isIdFree(messageID)){
-        model.add(new Message(messageID, Uuid.NULL, Uuid.NULL, creation, foundUser.id, content));
+      while(cursor.hasNext()){
+        Document doc = cursor.next();
 
-        // Find and update the previous "last" message so that it's "next" value
-        // will point to the new message.
+        final Uuid messageID = buildUuid(doc.getInteger("id"));
+        final Uuid conversationID = buildUuid(doc.getInteger("conversation"));
+        Conversation foundConversation = model.conversationById().first(conversationID);
+        final Uuid authorID = buildUuid(doc.getInteger("author"));
+        User foundUser = model.userById().first(authorID);
 
-        if (Uuid.equals(foundConversation.lastMessage, Uuid.NULL)) {
+        if(foundUser != null && foundConversation != null && isIdFree(messageID)){
+          Time creation = Time.fromMs(doc.getLong("creation"));
+          String content = doc.getString("content");
+          model.add(new Message(messageID, Uuid.NULL, Uuid.NULL, creation, foundUser.id, content));
 
-          // The conversation has no messages in it, that's why the last message is NULL (the first
-          // message should be NULL too. Since there is no last message, then it is not possible
-          // to update the last message's "next" value.
+          // Find and update the previous "last" message so that it's "next" value
+          // will point to the new message.
 
-        } else {
-          final Message lastMessage = model.messageById().first(foundConversation.lastMessage);
-          lastMessage.next = messageID;
+          if (Uuid.equals(foundConversation.lastMessage, Uuid.NULL)) {
+
+            // The conversation has no messages in it, that's why the last message is NULL (the first
+            // message should be NULL too. Since there is no last message, then it is not possible
+            // to update the last message's "next" value.
+
+          } else {
+            final Message lastMessage = model.messageById().first(foundConversation.lastMessage);
+            lastMessage.next = messageID;
+          }
+
+          // If the first message points to NULL it means that the conversation was empty and that
+          // the first message should be set to the new message. Otherwise the message should
+          // not change.
+          if(Uuid.equals(foundConversation.firstMessage, Uuid.NULL)){
+            foundConversation.firstMessage = messageID;
+          }
+
+          // Update the conversation to point to the new last message as it has changed.
+          foundConversation.lastMessage = messageID;
+
+          if (!foundConversation.users.contains(foundUser)) {
+            foundConversation.users.add(foundUser.id);
+          }
+
+          LOG.info("Loaded Message: \nid: %s\nauthor: %s\nconversation: %s\ncontent: %s\ncreation: %s\n", messageID, foundUser.name, foundConversation.title, content, creation);
+          messageCount++;
+        }else{
+          LOG.info("Loading Message failure. No user/conversation found or ID is in use: " + messageID);
+          errorCount++;
         }
 
-        // If the first message points to NULL it means that the conversation was empty and that
-        // the first message should be set to the new message. Otherwise the message should
-        // not change.
-        if(Uuid.equals(foundConversation.firstMessage, Uuid.NULL)){
-          foundConversation.firstMessage = messageID;
-        }
-
-        // Update the conversation to point to the new last message as it has changed.
-
-        foundConversation.lastMessage = messageID;
-
-        if (!foundConversation.users.contains(foundUser)) {
-          foundConversation.users.add(foundUser.id);
-        }
-
-        LOG.info("Loaded Message: \nid: %s\nauthor: %s\nconversation: %s\ncontent: %s\ncreation: %s\n", messageID, foundUser.name, foundConversation.title, content, creation);
-      }else{
-        LOG.info("Loading Message failure. No user/conversation found or ID is in use: " + messageID);
       }
-
-
+      LOG.info("Successfully loaded %d messages. Failed to load %d messages.\n",messageCount,errorCount);
     }
   }
 }

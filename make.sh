@@ -18,7 +18,5 @@ set -e
 
 mkdir -p bin
 
-
-
-javac -Xlint $(find * | grep "\\.java$") -d bin -sourcepath src -cp third_party/"*"
-javac -Xlint $(find * | grep "\\.java$") -d bin -sourcepath test -cp third_party/"*"
+javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d bin -sourcepath src -cp third_party/"*"
+javac -Xlint $(find * ! -path 'AndroidGUIClient/*' | grep "\\.java$") -d bin -sourcepath test -cp third_party/"*"

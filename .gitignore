@@ -2,10 +2,13 @@
 bin
 build
 *.class
-
+AndroidGUIClient
 
 # JetBrains IDE
 .idea
 *.iml
 
-# Personal
+# Other
+*.sh
+*.log
+*.lck
