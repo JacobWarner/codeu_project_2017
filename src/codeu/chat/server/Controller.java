@@ -16,7 +16,7 @@ package codeu.chat.server;
 
 
 import codeu.chat.common.*;
-import codeu.chat.common.Time;
+import codeu.chat.util.Time;
 import codeu.chat.database.ChatAppDatabaseConnection;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Time;
