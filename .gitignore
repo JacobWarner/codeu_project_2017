@@ -3,7 +3,8 @@ bin
 build
 *.class
 AndroidGUIClient
-chat_server_log*
+chat_server_log.log
+gen
 
 # JetBrains IDE
 .idea

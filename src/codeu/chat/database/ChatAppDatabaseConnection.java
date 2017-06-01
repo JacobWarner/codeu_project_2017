@@ -14,6 +14,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import static com.mongodb.client.model.Filters.eq;
+
 public class ChatAppDatabaseConnection {
     private static final Logger.Log LOG = Logger.newLog(ChatAppDatabaseConnection.class);
 
@@ -112,6 +114,42 @@ public class ChatAppDatabaseConnection {
             return true;
         }catch(MongoWriteException | MongoWriteConcernException mwe){
             LOG.info("Failed to save message on database:\nID:%s\nError:%s\n", message.id, mwe.getMessage());
+            return false;
+        }
+    }
+
+    //Not implemented - more to do
+    public boolean removeUser(User user) {
+        try{
+            database.getCollection("messages").deleteMany(eq("author", user.id.id()));
+            database.getCollection("conversations").deleteMany(eq("owner", user.id.id()));
+            database.getCollection("users").deleteOne(eq("id",user.id.id()));
+            return true;
+        }catch(MongoWriteException | MongoWriteConcernException me){
+            LOG.info("Failed to remove user from database:\nID:%s\nError:%s\n", user.id, me.getMessage());
+            return false;
+        }
+    }
+
+    //Not implemented - more to do
+    public boolean removeConversation(Conversation conversation) {
+        try{
+            database.getCollection("messages").deleteMany(eq("conversation", conversation.id));
+            database.getCollection("conversations").deleteOne(eq("id",conversation.id.id()));
+            return true;
+        }catch(MongoWriteException | MongoWriteConcernException me){
+            LOG.info("Failed to remove conversation from database:\nID:%s\nError:%s\n", conversation.id, me.getMessage());
+            return false;
+        }
+    }
+
+    //Not implemented - more to do
+    public boolean removeMessage(Message message) {
+        try{
+            database.getCollection("messages").deleteOne(eq("id",message.id.id()));
+            return true;
+        }catch(MongoWriteException | MongoWriteConcernException me){
+            LOG.info("Failed to remove message from database:\nID:%s\nError:%s\n", message.id, me.getMessage());
             return false;
         }
     }

@@ -103,4 +103,8 @@ public final class Conversation {
     String passwordHash = Password.getHashCode(password, this.salt);
     return(passwordHash.equals(passHash));
   }
+
+  public boolean isPrivate() {
+    return (!passHash.equals("defaultPassword123!"));
+  }
 }

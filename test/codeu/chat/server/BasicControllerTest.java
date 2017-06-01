@@ -25,6 +25,9 @@ import codeu.chat.common.Message;
 import codeu.chat.common.User;
 import codeu.chat.util.Uuid;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public final class BasicControllerTest {
 
   private Model model;
@@ -33,6 +36,8 @@ public final class BasicControllerTest {
 
   @BeforeClass
   public static void onlyOnce() {
+    Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
+    mongoLogger.setLevel(Level.SEVERE);
     database = new ChatAppDatabaseConnection("Tester", "jJZn8LnLucZUJqph", "TesterDatabase");
   }
 
@@ -47,7 +52,7 @@ public final class BasicControllerTest {
 
     final User user = controller.newUser("user", "TestPasswordHash", "saltCode");
 
-    assertFalse("Check that user has a valid reference", user == null);
+    assertNotNull("User", user);
   }
 
   @Test
@@ -55,12 +60,10 @@ public final class BasicControllerTest {
 
     final User user = controller.newUser("user", "TestPasswordHash", "saltCode");
 
-    assertFalse("Check that user has a valid reference", user == null);
-
     final Conversation conversation =
         controller.newConversation("conversation", user.id, "pashHash", "salt");
 
-    assertFalse("Check that conversation has a valid reference", conversation == null);
+    assertNotNull("Conversation", conversation);
   }
 
   @Test
@@ -68,16 +71,12 @@ public final class BasicControllerTest {
 
     final User user = controller.newUser("user", "TestPasswordHash", "saltCode");
 
-    assertFalse("Check that user has a valid reference", user == null);
-
     final Conversation conversation =
         controller.newConversation("conversation", user.id, "passHash", "salt");
 
-    assertFalse("Check that conversation has a valid reference", conversation == null);
-
     final Message message = controller.newMessage(user.id, conversation.id, "Hello World");
 
-    assertFalse("Check that the message has a valid reference", message == null);
+    assertNotNull("Message", message);
   }
 
   /**

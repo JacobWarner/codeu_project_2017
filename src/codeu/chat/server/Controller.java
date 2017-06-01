@@ -19,7 +19,6 @@ import codeu.chat.common.*;
 import codeu.chat.util.Time;
 import codeu.chat.database.ChatAppDatabaseConnection;
 import codeu.chat.util.Logger;
-import codeu.chat.util.Time;
 import codeu.chat.util.Uuid;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
@@ -43,10 +42,6 @@ public final class Controller implements RawController, BasicController {
     this.database = database;
   }
 
-  @Override
-  public Message newMessage(Uuid author, Uuid conversation, String body) {
-    return newMessage(createId(), author, conversation, body, Time.now());
-  }
 
   @Override
   public User newUser(String name, String PasswordHash, String salt) {
@@ -59,58 +54,10 @@ public final class Controller implements RawController, BasicController {
   }
 
   @Override
-  public Message newMessage(
-      Uuid id, Uuid author, Uuid conversation, String body, Time creationTime) {
-
-    final User foundUser = model.userById().first(author);
-    final Conversation foundConversation = model.conversationById().first(conversation);
-
-    Message message = null;
-
-
-    if (foundUser != null && foundConversation != null && isIdFree(id)) {
-
-      message = new Message(id, Uuid.NULL, Uuid.NULL, creationTime, author, body);
-
-      if(database.write(message, foundConversation.id)){
-        model.add(message);
-        LOG.info("Message added: %s", message.id);
-
-        // Find and update the previous "last" message so that it's "next" value
-        // will point to the new message.
-
-        if (Uuid.equals(foundConversation.lastMessage, Uuid.NULL)) {
-
-          // The conversation has no messages in it, that's why the last message is NULL (the first
-          // message should be NULL too. Since there is no last message, then it is not possible
-          // to update the last message's "next" value.
-
-        } else {
-          final Message lastMessage = model.messageById().first(foundConversation.lastMessage);
-          lastMessage.next = message.id;
-        }
-
-        // If the first message points to NULL it means that the conversation was empty and that
-        // the first message should be set to the new message. Otherwise the message should
-        // not change.
-
-        foundConversation.firstMessage =
-                Uuid.equals(foundConversation.firstMessage, Uuid.NULL)
-                        ? message.id
-                        : foundConversation.firstMessage;
-
-        // Update the conversation to point to the new last message as it has changed.
-
-        foundConversation.lastMessage = message.id;
-
-        if (!foundConversation.users.contains(foundUser)) {
-          foundConversation.users.add(foundUser.id);
-        }
-      }
-    }
-
-    return message;
+  public Message newMessage(Uuid author, Uuid conversation, String body) {
+    return newMessage(createId(), author, conversation, body, Time.now());
   }
+
 
   @Override
   public User newUser(Uuid id, String name, Time creationTime, String PasswordHash, String salt) {
@@ -167,6 +114,60 @@ public final class Controller implements RawController, BasicController {
     return conversation;
   }
 
+  @Override
+  public Message newMessage(
+          Uuid id, Uuid author, Uuid conversation, String body, Time creationTime) {
+
+    final User foundUser = model.userById().first(author);
+    final Conversation foundConversation = model.conversationById().first(conversation);
+
+    Message message = null;
+
+
+    if (foundUser != null && foundConversation != null && isIdFree(id)) {
+
+      message = new Message(id, Uuid.NULL, Uuid.NULL, creationTime, author, body);
+
+      if(database.write(message, foundConversation.id)){
+        model.add(message);
+        LOG.info("Message added: %s", message.id);
+
+        // Find and update the previous "last" message so that it's "next" value
+        // will point to the new message.
+
+        if (Uuid.equals(foundConversation.lastMessage, Uuid.NULL)) {
+
+          // The conversation has no messages in it, that's why the last message is NULL (the first
+          // message should be NULL too. Since there is no last message, then it is not possible
+          // to update the last message's "next" value.
+
+        } else {
+          final Message lastMessage = model.messageById().first(foundConversation.lastMessage);
+          lastMessage.next = message.id;
+        }
+
+        // If the first message points to NULL it means that the conversation was empty and that
+        // the first message should be set to the new message. Otherwise the message should
+        // not change.
+
+        foundConversation.firstMessage =
+                Uuid.equals(foundConversation.firstMessage, Uuid.NULL)
+                        ? message.id
+                        : foundConversation.firstMessage;
+
+        // Update the conversation to point to the new last message as it has changed.
+
+        foundConversation.lastMessage = message.id;
+
+        if (!foundConversation.users.contains(foundUser)) {
+          foundConversation.users.add(foundUser.id);
+        }
+      }
+    }
+
+    return message;
+  }
+
   /**
    * Makes the serverID the identifier for Uuids (needed for loading/saving data)
    * @param id
@@ -180,13 +181,12 @@ public final class Controller implements RawController, BasicController {
 
     Uuid candidate;
 
-    for (candidate = uuidGenerator.make(); isIdInUse(candidate); candidate = uuidGenerator.make()) {
-
-      // Assuming that "randomUuid" is actually well implemented, this
-      // loop should never be needed, but just in case make sure that the
-      // Uuid is not actually in use before returning it.
-
-    }
+    // Assuming that "randomUuid" is actually well implemented, this
+    // loop should never be needed, but just in case make sure that the
+    // Uuid is not actually in use before returning it.
+    do {
+      candidate = uuidGenerator.make();
+    }while (isIdInUse(candidate));
 
     return candidate;
   }

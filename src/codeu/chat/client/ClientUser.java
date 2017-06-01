@@ -15,6 +15,8 @@
 package codeu.chat.client;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import codeu.chat.common.Password;
 import codeu.chat.common.User;
@@ -44,26 +46,32 @@ public final class ClientUser {
 
   // Validate the username string
   public static boolean isValidName(String userName) {
-    boolean clean = true;
-    if (userName.length() == 0) {
-      clean = false;
-    } else {
-
-      // TODO: check for invalid characters
-
+    if(userName == null || userName.equals("") || userName.length() <= 1 || userName.length() > 20){
+      return false;
     }
-    return clean;
+    Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~`]");
+    Matcher m = p.matcher(userName);
+    if (m.find()) {
+      return false;
+    }
+    return true;
   }
 
   //Validate the password string
   public static boolean isValidPassword(String password) {
-    boolean clean = true;
-    if (password.length() <= 6) {
-      clean = false;
-    } else {
-      // TODO: check for password criteria
+    if(password == null || password.equals("") || password.length() < 6 || password.length() > 64){
+      return false;
     }
-    return clean;
+    Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~` 0-9]");
+    Matcher m = p.matcher(password);
+    int specialCharacters = 0;
+    while(m.find()){
+      specialCharacters++;
+    }
+    if (specialCharacters < 2) {
+      return false;
+    }
+    return true;
   }
 
   public boolean hasCurrent() {
@@ -108,6 +116,7 @@ public final class ClientUser {
     if (user == null) {
       System.out.format(
           "Error: user not created - %s.\n", (validInputs) ? "server failure" : "bad input value");
+      throwNull();
     } else {
       LOG.info("New user complete, Name= \"%s\" UUID=%s", user.name, user.id);
       updateUsers();
@@ -127,12 +136,7 @@ public final class ClientUser {
 
   public String getName(Uuid id) {
     final User user = lookup(id);
-    if (user == null) {
-      LOG.warning("userContext.lookup() failed on ID: %s", id);
-      return null;
-    } else {
-      return user.name;
-    }
+    return (user == null) ? null : user.name;
   }
 
   public Iterable<User> getUsers() {
@@ -149,19 +153,16 @@ public final class ClientUser {
     }
   }
 
-  public static String getUserInfoString(User user) {
-    return (user == null)
-        ? "Null user"
-        : String.format(
-            " User: %s\n   Id: %s\n   created: %s\n ", user.name, user.id, user.creation);
-  }
-
-  public String showUserInfo(String uname) {
-    return getUserInfoString(usersByName.first(uname));
-  }
-
-  // Move to User's toString()
   public static void printUser(User user) {
-    System.out.println(getUserInfoString(user));
+    System.out.println(user.getUserInfo());
+  }
+
+  public User getUserByName(String uname) {
+    usersByName = new Store<>(String.CASE_INSENSITIVE_ORDER);
+    return usersByName.first(uname);
+  }
+
+  private static void throwNull(){
+    throw new NullPointerException();
   }
 }

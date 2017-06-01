@@ -66,8 +66,7 @@ public final class User {
   }
 
   public boolean hasPassword() {
-    if (passwordHash.equalsIgnoreCase("password")) return false;
-    else return true;
+    return (!passwordHash.equalsIgnoreCase("defaultPassword123!"));
   }
 
 
@@ -82,5 +81,10 @@ public final class User {
 
   public String getSalt() {
     return salt;
+  }
+
+  public String getUserInfo(){
+    return String.format(
+            " User: %s\n   Id: %s\n   created: %s\n ", name, id.toString(), creation);
   }
 }

@@ -211,7 +211,7 @@ public final class UserPanel extends JPanel {
           public void valueChanged(ListSelectionEvent e) {
             if (userList.getSelectedIndex() != -1) {
               final String data = userList.getSelectedValue();
-              userInfoPanel.setText(clientContext.user.showUserInfo(data));
+              userInfoPanel.setText(clientContext.user.getUserByName(data).getUserInfo());
             }
           }
         });
