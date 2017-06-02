@@ -80,6 +80,12 @@ public final class ClientMessage {
     printMessage(current, userContext);
   }
 
+  public void showRecent(int last) {
+    if(conversationContext.hasCurrent()){
+      printMessage(conversationContents.get(last-1),userContext);
+    }
+  }
+
   public void resetCurrent(boolean replaceAll) {
     updateMessages(replaceAll);
   }
@@ -115,6 +121,7 @@ public final class ClientMessage {
   // Show all messages attached to the current conversation. This will balk if the conversation
   // has too many messages (use m-next and m-show instead).
   public void showAllMessages() {
+    updateMessages(conversationContext.getCurrent(), true);
     if (conversationContents.size() == 0) {
       System.out.println(" Current Conversation has no messages");
     } else {
@@ -134,10 +141,21 @@ public final class ClientMessage {
 
   // Processing for m-show command.
   // Accept an int for number of messages to attempt to show (1 by default).
-  // Negative values go from newest to oldest.
+  // No negative integers accepted (if we want the messages given in a different
+  //order, there should be another method)
   public void showMessages(int count) {
-    for (final Message m : conversationContents) {
-      printMessage(m, userContext);
+    updateMessages(conversationContext.getCurrent(), true);
+    int allMessagesCount = conversationContents.size();
+    if (allMessagesCount == 0 || count < 0) {
+      System.out.println("No messages to show (empty or negative integer).");
+    }else if (count <= allMessagesCount){
+      for(int i = allMessagesCount-count; i<allMessagesCount; i++){
+        printMessage(conversationContents.get(i));
+      }
+    }else{
+      for(Message message: conversationContents){
+        printMessage(message);
+      }
     }
   }
 

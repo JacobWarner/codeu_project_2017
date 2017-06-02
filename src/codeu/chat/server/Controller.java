@@ -105,8 +105,6 @@ public final class Controller implements RawController, BasicController {
         LOG.info("New conversation fail. Could not save to database (conversation.id=%s conversation.title=%s conversation.owner=%s conversation.time=%s)",
                 id,title,owner,creationTime);
       }
-
-
     }else{
       LOG.info("newConversation fail - id in use: " + id);
     }

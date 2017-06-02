@@ -116,10 +116,11 @@ public final class ClientUser {
     if (user == null) {
       System.out.format(
           "Error: user not created - %s.\n", (validInputs) ? "server failure" : "bad input value");
-      throwNull();
     } else {
       LOG.info("New user complete, Name= \"%s\" UUID=%s", user.name, user.id);
       updateUsers();
+      current = user;
+      System.out.println("You are now signed in as " + user.name + ".");
     }
   }
 

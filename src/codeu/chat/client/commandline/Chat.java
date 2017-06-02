@@ -80,8 +80,8 @@ public final class Chat {
     System.out.println("Message commands:");
     System.out.println("   m-add <body>     - add a new message to the current conversation.");
     System.out.println("   m-list-all       - list all messages in the current conversation.");
-    System.out.println("   m-next <index>   - index of next message to view.");
-    System.out.println("   m-show <count>   - show next <count> messages.");
+    //System.out.println("   m-next <index>   - index of next message to view.");
+    System.out.println("   m-show <count>   - show <count> previous messages.");
   }
 
   // Prompt for new command.
@@ -147,9 +147,9 @@ public final class Chat {
       case M_LIST_ALL:
         messageListAll();
         break;
-      case M_NEXT:
-        messageNext();
-        break;
+//      case M_NEXT:
+//        messageNext();
+//        break;
       case M_SHOW:
         messageShow();
         break;
@@ -277,7 +277,6 @@ public final class Chat {
   }
 
   private void messageShow() {
-    // TODO: Implement m-show command to show N messages (currently just show all)
     if (!clientContext.conversation.hasCurrent()) {
       System.out.println("ERROR: No conversation selected.");
     } else {
@@ -309,10 +308,16 @@ public final class Chat {
   private void signOutUser() {
     if (!clientContext.user.signOutUser()) {
       System.out.println("Error: sign out failed (not signed in?)");
+    }else{
+      if(clientContext.conversation.hasCurrent()){
+        clientContext.conversation.setCurrent(null);
+      }
     }
   }
 
   // Helper for showCurrent() - show message info.
+  // Changed this to show most recent message - this is
+  // information the user would want to know over the head message
   private void showCurrentMessage() {
     if (clientContext.conversation.currentMessageCount() == 0) {
       System.out.println(" -- no messages in conversation --");
@@ -322,34 +327,29 @@ public final class Chat {
       if (!clientContext.message.hasCurrent()) {
         System.out.println(" -- no current message --");
       } else {
-        System.out.println("\nCurrent Message:");
-        clientContext.message.showCurrent();
+        System.out.println("\nMost Recent Message:");
+        clientContext.message.showRecent(clientContext.conversation.currentMessageCount());
       }
     }
   }
 
   // Show current user, conversation, message, if any
   private void showCurrent() {
-    boolean displayed = false;
     if (clientContext.user.hasCurrent()) {
       System.out.println("User:");
       clientContext.user.showCurrent();
       System.out.println();
-      displayed = true;
+    }else{
+      System.out.println("No current user.\n");
     }
 
     if (clientContext.conversation.hasCurrent()) {
       System.out.println("Conversation:");
       clientContext.conversation.showCurrent();
-
       showCurrentMessage();
-
       System.out.println();
-      displayed = true;
-    }
-
-    if (!displayed) {
-      System.out.println("No current user or conversation.");
+    }else{
+      System.out.println("No current conversation.");
     }
   }
 
@@ -406,8 +406,8 @@ public final class Chat {
 
     //Executed if the selected conversation exists and is new
     if(newCurrent != null && newCurrent != previous){
-      clientContext.message.resetCurrent(true);
       clientContext.conversation.updateAllConversations(true);
+      clientContext.message.resetCurrent(true);
     }
   }
 

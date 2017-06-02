@@ -89,7 +89,7 @@ public final class ClientConversation {
   }
 
   public void startConversation(String title, Uuid owner, String passHash, String salt) {
-    final boolean validInputs = isValidTitle(title);
+    final boolean validInputs = (isValidTitle(title)) && (owner != null) && (ClientUser.isValidPassword(passHash));
 
     final Conversation conv = (validInputs) ? controller.newConversation(title, owner, passHash, salt) : null;
 
@@ -97,17 +97,17 @@ public final class ClientConversation {
       System.out.println(String.format("Error: conversation not created - %s.\n",
           (validInputs) ? "server failure" : "bad input value"));
     } else {
-      System.out.println(String.format("New conversation: Title= \"%s\" UUID= %s", conv.title, conv.id));
+      System.out.println(String.format("New conversation: Title= \"%s\" UUID= %s\n", conv.title, conv.id));
 
-      currentSummary = conv.summary;
       updateAllConversations(true);
+      setCurrent(conv.summary);
     }
   }
 
   public void setCurrent(ConversationSummary conv) { currentSummary = conv; }
 
   public void showAllConversations() {
-    updateAllConversations(false);
+    updateAllConversations(true);
 
     for (final ConversationSummary c : summariesByUuid.values()) {
       printConversation(c, userContext);
@@ -154,7 +154,6 @@ public final class ClientConversation {
   // If the input currentChanged is true, then re-establish the state of
   // the current Conversation, including its messages.
   public void updateAllConversations(boolean currentChanged) {
-
     summariesByUuid.clear();
     summariesSortedByTitle = new Store<>(String.CASE_INSENSITIVE_ORDER);
 
@@ -200,14 +199,20 @@ public final class ClientConversation {
   }
 
   //Joins public conversations, supplied the default password which is "defaultPassword123!"
+  //TODO: If there are two public conversations with the same title, we run into an issue...
   public boolean joinConversation(String title){
     return joinConversation(title, "defaultPassword123!");
   }
 
   //Joins a private conversation, a password is required
   public boolean joinConversation(String title, String password){
-    ConversationSummary conn = summariesSortedByTitle.first(title);
-    if(conn != null){
+    if(!userContext.hasCurrent()){
+      System.out.println("Join failed. Not signed into a user.");
+      return false;
+    }
+
+    if(exists(title)){
+      ConversationSummary conn = summariesSortedByTitle.first(title);
       if(conn.isPrivate() && conn.isPassword(password)) {
         setCurrent(conn);
         return true;
@@ -219,6 +224,7 @@ public final class ClientConversation {
       setCurrent(conn);
       return true;
     }
+
     return false;
   }
 
