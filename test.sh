@@ -16,4 +16,4 @@
 
 set -e
 
-java -cp "third_party/*;bin" codeu.chat.TestRunner
+java -cp ./third_party/*:./bin codeu.chat.TestRunner
