@@ -157,7 +157,7 @@ public final class Controller implements RawController, BasicController {
 
         foundConversation.lastMessage = message.id;
 
-        if (!foundConversation.users.contains(foundUser)) {
+        if (!foundConversation.users.contains(foundUser.id)) {
           foundConversation.users.add(foundUser.id);
         }
       }
@@ -168,10 +168,10 @@ public final class Controller implements RawController, BasicController {
 
   /**
    * Makes the serverID the identifier for Uuids (needed for loading/saving data)
-   * @param id
+   * @param id - the root of the returned Uuid object (unique identifier)
    * @return Uuid object
    */
-  public Uuid buildUuid(int id){
+  private Uuid buildUuid(int id){
     return new Uuid(serverId, id);
   }
 
@@ -199,7 +199,7 @@ public final class Controller implements RawController, BasicController {
     return !isIdInUse(id);
   }
 
-  public void loadDatabase(){
+  void loadDatabase(){
     loadUsers();
     loadConversations();
     loadMessages();
@@ -314,7 +314,7 @@ public final class Controller implements RawController, BasicController {
           // Update the conversation to point to the new last message as it has changed.
           foundConversation.lastMessage = messageID;
 
-          if (!foundConversation.users.contains(foundUser)) {
+          if (!foundConversation.users.contains(foundUser.id)) {
             foundConversation.users.add(foundUser.id);
           }
 

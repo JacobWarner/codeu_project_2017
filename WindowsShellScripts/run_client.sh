@@ -18,10 +18,10 @@ cd ..
 HOST="$1"
 PORT="$2"
 
-if [[ "$HOST" == "" || "$PORT" == "" ]] ; then
+if [[ "${HOST}" == "" || "${PORT}" == "" ]] ; then
   echo 'usage: <HOST> <PORT>'
   exit 1
 fi
 
 cd './bin'
-java codeu.chat.ClientMain "$HOST@$PORT"
+java codeu.chat.ClientMain "${HOST}@${PORT}"

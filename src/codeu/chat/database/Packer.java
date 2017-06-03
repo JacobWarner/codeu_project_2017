@@ -1,29 +1,24 @@
 package codeu.chat.database;
 
-/**
- * Created by Jacob Warner on May 18, 2017
- */
-
 import codeu.chat.util.Uuid;
 import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
 import codeu.chat.common.User;
 import org.bson.Document;
 
-public class Packer {
+class Packer {
 
     /**
      * Converts a User object to a Document
      * @param user: the User to be converted
      * @return a Document derived from Message
      */
-    public static Document packUser(User user) {
-        Document doc = new Document("id", user.id.id())
+    static Document packUser(User user) {
+        return new Document("id", user.id.id())
                 .append("name", user.name)
                 .append("creation", user.creation.inMs())
                 .append("passHash", user.getPasswordHash())
                 .append("salt", user.getSalt());
-        return doc;
     }
 
     /**
@@ -32,13 +27,12 @@ public class Packer {
      * @param conversation: the ID of the Conversation the Message belongs to
      * @return a Document object derived from Message
      */
-    public static Document packMessage(Message message, Uuid conversation) {
-        Document doc = new Document("id", message.id.id())
+    static Document packMessage(Message message, Uuid conversation) {
+        return new Document("id", message.id.id())
                 .append("creation", message.creation.inMs())
                 .append("author", message.author.id())
                 .append("content", message.content)
                 .append("conversation", conversation.id());
-        return doc;
     }
 
 
@@ -47,13 +41,12 @@ public class Packer {
      * @param conversation: the Conversation to be converted
      * @return a Document derived from Conversation
      */
-    public static Document packConversation(Conversation conversation) {
-        Document doc = new Document("id", conversation.id.id())
+    static Document packConversation(Conversation conversation) {
+        return new Document("id", conversation.id.id())
                 .append("owner", conversation.owner.id())
                 .append("creation", conversation.creation.inMs())
                 .append("title", conversation.title)
                 .append("passHash", conversation.getPassHash())
                 .append("salt", conversation.getSalt());
-        return doc;
     }
 }

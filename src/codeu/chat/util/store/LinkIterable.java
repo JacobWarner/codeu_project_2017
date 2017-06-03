@@ -23,7 +23,7 @@ final class LinkIterable<KEY, VALUE> implements Iterable<VALUE> {
   private final StoreLink<KEY, VALUE> first;
   private final StoreLink<KEY, VALUE> last;
 
-  public LinkIterable(Comparator<KEY> comparator, StoreLink<KEY, VALUE> first, StoreLink<KEY, VALUE> last) {
+  LinkIterable(Comparator<KEY> comparator, StoreLink<KEY, VALUE> first, StoreLink<KEY, VALUE> last) {
     this.comparator = comparator;
     this.first = first;
     this.last = last;
@@ -31,6 +31,6 @@ final class LinkIterable<KEY, VALUE> implements Iterable<VALUE> {
 
   @Override
   public Iterator<VALUE> iterator() {
-    return new LinkIterator<KEY, VALUE>(comparator, first, last);
+    return new LinkIterator<>(comparator, first, last);
   }
 }

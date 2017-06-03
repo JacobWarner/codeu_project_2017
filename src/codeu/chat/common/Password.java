@@ -26,9 +26,9 @@ public class Password {
       md.update(salt.getBytes());
       byte[] array = md.digest();
 
-      StringBuffer hexString = new StringBuffer();
-      for (int i = 0; i < array.length; i++) {
-        hexString.append(Integer.toHexString(0xFF & array[i]));
+      StringBuilder hexString = new StringBuilder();
+      for (int byteElement : array) {
+        hexString.append(Integer.toHexString(0xFF & byteElement));
       }
       hashValue = hexString.toString();
     } catch (Exception e) {

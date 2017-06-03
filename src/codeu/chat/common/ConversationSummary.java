@@ -89,7 +89,7 @@ public final class ConversationSummary implements ListViewable {
     String newPassHash = Password.getHashCode(password, salt);
     return (passwordHash.equals(newPassHash));
   }
-  public boolean isPrivate() {
+  public boolean isPrivate() throws NullPointerException{
     return (!passwordHash.equals("defaultPassword123!"));
   }
 }

@@ -27,12 +27,12 @@ import codeu.chat.common.ConversationSummary;
 // NOTE: JPanel is serializable, but there is no need to serialize ConversationPanel
 // without the @SuppressWarnings, the compiler will complain of no override for serialVersionUID
 @SuppressWarnings("serial")
-public final class ConversationPanel extends JPanel {
+final class ConversationPanel extends JPanel {
 
   private final ClientContext clientContext;
   private final MessagePanel messagePanel;
 
-  public ConversationPanel(ClientContext clientContext, MessagePanel messagePanel) {
+  ConversationPanel(ClientContext clientContext, MessagePanel messagePanel) {
     super(new GridBagLayout());
     this.clientContext = clientContext;
     this.messagePanel = messagePanel;

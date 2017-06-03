@@ -42,7 +42,7 @@ public final class Secret {
     return compressed;
   }
 
-  private static final int toHex(char c) {
+  private static int toHex(char c) {
 
     // If an invalid value was given, it will be treated as 0.
 

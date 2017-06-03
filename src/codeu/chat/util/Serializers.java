@@ -60,7 +60,7 @@ public final class Serializers {
     }
   };
 
-  public static final Serializer<Long> LONG = new Serializer<Long>() {
+  static final Serializer<Long> LONG = new Serializer<Long>() {
 
     @Override
     public void write(OutputStream out, Long value) throws IOException {

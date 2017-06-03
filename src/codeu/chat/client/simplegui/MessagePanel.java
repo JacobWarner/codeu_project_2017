@@ -27,7 +27,7 @@ import codeu.chat.common.User;
 // NOTE: JPanel is serializable, but there is no need to serialize MessagePanel
 // without the @SuppressWarnings, the compiler will complain of no override for serialVersionUID
 @SuppressWarnings("serial")
-public final class MessagePanel extends JPanel {
+final class MessagePanel extends JPanel {
 
   // These objects are modified by the Conversation Panel.
   private final JLabel messageOwnerLabel = new JLabel("Owner:", JLabel.RIGHT);
@@ -36,14 +36,14 @@ public final class MessagePanel extends JPanel {
 
   private final ClientContext clientContext;
 
-  public MessagePanel(ClientContext clientContext) {
+  MessagePanel(ClientContext clientContext) {
     super(new GridBagLayout());
     this.clientContext = clientContext;
     initialize();
   }
 
   // External agent calls this to trigger an update of this panel's contents.
-  public void update(ConversationSummary owningConversation) {
+  void update(ConversationSummary owningConversation) {
 
     final User u = (owningConversation == null) ?
         null :
@@ -54,7 +54,7 @@ public final class MessagePanel extends JPanel {
             ((owningConversation==null) ? "" : owningConversation.owner) :
             u.name));
 
-    messageConversationLabel.setText("Conversation: " + owningConversation.title);
+    messageConversationLabel.setText("Conversation: " + (owningConversation != null ? owningConversation.title : null));
 
     getAllMessages(owningConversation);
   }

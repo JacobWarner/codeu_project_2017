@@ -14,7 +14,7 @@
 
 package codeu.chat.client;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -58,16 +58,13 @@ public final class ClientConversation {
   }
 
   // Validate the title of the conversation
-  static public boolean isValidTitle(String title) {
+  private static boolean isValidTitle(String title) {
     if(title == null || title.equals("") || title.length() <= 1 || title.length() > 64){
       return false;
     }
     Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~`]");
     Matcher m = p.matcher(title);
-    if (m.find()) {
-      return false;
-    }
-    return true;
+    return !m.find();
   }
 
   public boolean hasCurrent() {
@@ -104,7 +101,7 @@ public final class ClientConversation {
     }
   }
 
-  public void setCurrent(ConversationSummary conv) { currentSummary = conv; }
+  public void setCurrent(ConversationSummary conversation) { currentSummary = conversation; }
 
   public void showAllConversations() {
     updateAllConversations(true);
@@ -115,11 +112,8 @@ public final class ClientConversation {
   }
 
   // Get a single conversation from the server.
-  public Conversation getConversation(Uuid conversationId) {
-    for (final Conversation c : view.getConversations(Arrays.asList(conversationId))) {
-      return c;
-    }
-    return null;
+  Conversation getConversation(Uuid conversationId) {
+    return view.getConversations(Collections.singletonList(conversationId)).iterator().next();
   }
 
   private void leaveCurrentConversation() {
@@ -186,7 +180,6 @@ public final class ClientConversation {
     }
   }
 
-  // Print Conversation outside of User context.
   public static void printConversation(ConversationSummary c) {
     printConversation(c, null);
   }
@@ -198,13 +191,13 @@ public final class ClientConversation {
     return (conSum != null);
   }
 
-  //Joins public conversations, supplied the default password which is "defaultPassword123!"
+
   //TODO: If there are two public conversations with the same title, we run into an issue...
   public boolean joinConversation(String title){
     return joinConversation(title, "defaultPassword123!");
   }
 
-  //Joins a private conversation, a password is required
+
   public boolean joinConversation(String title, String password){
     if(!userContext.hasCurrent()){
       System.out.println("Join failed. Not signed into a user.");
@@ -213,18 +206,15 @@ public final class ClientConversation {
 
     if(exists(title)){
       ConversationSummary conn = summariesSortedByTitle.first(title);
-      if(conn.isPrivate() && conn.isPassword(password)) {
+      if(conn!= null && conn.isPassword(password)) {
         setCurrent(conn);
         return true;
       }
-      else if(conn.isPrivate()) {
+      else {
         System.out.println("Incorrect password. Staying in current conversation.");
         return false;
       }
-      setCurrent(conn);
-      return true;
     }
-
     return false;
   }
 

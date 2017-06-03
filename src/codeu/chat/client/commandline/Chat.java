@@ -22,6 +22,7 @@ import codeu.chat.client.View;
 import codeu.chat.common.ConversationSummary;
 import codeu.chat.common.Password;
 import codeu.chat.util.Logger;
+import codeu.chat.util.Method;
 
 // Chat - top-level client application.
 public final class Chat {
@@ -44,10 +45,7 @@ public final class Chat {
   private static final String C_PRIVATE = "c-private";
   private static final String M_ADD = "m-add";
   private static final String M_LIST_ALL = "m-list-all";
-  private static final String M_NEXT = "m-next";
   private static final String M_SHOW = "m-show";
-
-  private static final int PAGE_SIZE = 10;
 
   private boolean alive = true;
   private Scanner lineScanner;
@@ -80,7 +78,6 @@ public final class Chat {
     System.out.println("Message commands:");
     System.out.println("   m-add <body>     - add a new message to the current conversation.");
     System.out.println("   m-list-all       - list all messages in the current conversation.");
-    //System.out.println("   m-next <index>   - index of next message to view.");
     System.out.println("   m-show <count>   - show <count> previous messages.");
   }
 
@@ -265,8 +262,9 @@ public final class Chat {
     }
   }
 
+  // TODO: Implement m-next command to jump to an index in the message chain.
   private void messageNext() {
-    // TODO: Implement m-next command to jump to an index in the message chain.
+    Method.notImplemented();
     if (!clientContext.conversation.hasCurrent()) {
       System.out.println("ERROR: No conversation selected.");
     } else if (!tokenScanner.hasNextInt()) {
@@ -315,7 +313,7 @@ public final class Chat {
     }
   }
 
-  // Helper for showCurrent() - show message info.
+  // Helper for showCurrent() - shows message info.
   // Changed this to show most recent message - this is
   // information the user would want to know over the head message
   private void showCurrentMessage() {
@@ -333,7 +331,7 @@ public final class Chat {
     }
   }
 
-  // Show current user, conversation, message, if any
+  // Show current user, conversation, and message(s)
   private void showCurrent() {
     if (clientContext.user.hasCurrent()) {
       System.out.println("User:");
@@ -350,24 +348,6 @@ public final class Chat {
       System.out.println();
     }else{
       System.out.println("No current conversation.");
-    }
-  }
-
-  // Display current user.
-  private void showCurrentUser() {
-    if (clientContext.user.hasCurrent()) {
-      clientContext.user.showCurrent();
-    } else {
-      System.out.println("No current user.");
-    }
-  }
-
-  // Display current conversation.
-  private void showCurrentConversation() {
-    if (clientContext.conversation.hasCurrent()) {
-      clientContext.conversation.showCurrent();
-    } else {
-      System.out.println(" No current conversation.");
     }
   }
 
@@ -397,7 +377,7 @@ public final class Chat {
     return alive;
   }
 
-  public void joinConversation(String name, String password) {
+  private void joinConversation(String name, String password) {
     final ConversationSummary previous = clientContext.conversation.getCurrent();
     ConversationSummary newCurrent;
 
@@ -411,7 +391,7 @@ public final class Chat {
     }
   }
 
-  public void joinConversation(String name){
+  private void joinConversation(String name){
     joinConversation(name, "defaultPassword123!");
   }
 }

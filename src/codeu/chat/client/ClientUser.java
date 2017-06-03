@@ -39,26 +39,23 @@ public final class ClientUser {
   // This is the set of users known to the server, sorted by name.
   private Store<String, User> usersByName = new Store<>(String.CASE_INSENSITIVE_ORDER);
 
-  public ClientUser(Controller controller, View view) {
+  ClientUser(Controller controller, View view) {
     this.controller = controller;
     this.view = view;
   }
 
   // Validate the username string
-  public static boolean isValidName(String userName) {
+  private static boolean isValidName(String userName) {
     if(userName == null || userName.equals("") || userName.length() <= 1 || userName.length() > 20){
       return false;
     }
     Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~`]");
     Matcher m = p.matcher(userName);
-    if (m.find()) {
-      return false;
-    }
-    return true;
+    return !m.find();
   }
 
   //Validate the password string
-  public static boolean isValidPassword(String password) {
+  static boolean isValidPassword(String password) {
     if(password == null || password.equals("") || password.length() < 6 || password.length() > 64){
       return false;
     }
@@ -68,10 +65,7 @@ public final class ClientUser {
     while(m.find()){
       specialCharacters++;
     }
-    if (specialCharacters < 2) {
-      return false;
-    }
-    return true;
+    return specialCharacters >= 2;
   }
 
   public boolean hasCurrent() {
@@ -132,7 +126,7 @@ public final class ClientUser {
   }
 
   public User lookup(Uuid id) {
-    return (usersById.containsKey(id)) ? usersById.get(id) : null;
+    return usersById.getOrDefault(id, null);
   }
 
   public String getName(Uuid id) {
@@ -154,16 +148,12 @@ public final class ClientUser {
     }
   }
 
-  public static void printUser(User user) {
+  private static void printUser(User user) {
     System.out.println(user.getUserInfo());
   }
 
-  public User getUserByName(String uname) {
+  public User getUserByName(String username) {
     usersByName = new Store<>(String.CASE_INSENSITIVE_ORDER);
-    return usersByName.first(uname);
-  }
-
-  private static void throwNull(){
-    throw new NullPointerException();
+    return usersByName.first(username);
   }
 }

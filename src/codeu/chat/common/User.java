@@ -65,11 +65,6 @@ public final class User {
     this.salt = salt;
   }
 
-  public boolean hasPassword() {
-    return (!passwordHash.equalsIgnoreCase("defaultPassword123!"));
-  }
-
-
   public boolean isPassword(String password){
     String hashAttempt = Password.getHashCode(password, this.salt);
     return (hashAttempt.equals(this.passwordHash));

@@ -26,7 +26,6 @@ import codeu.chat.common.LinearUuidGenerator;
 import codeu.chat.common.Relay;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Time;
-import codeu.chat.util.Logger;
 import codeu.chat.util.Uuid;
 
 public final class Server implements Relay {
@@ -39,7 +38,7 @@ public final class Server implements Relay {
     private final String text;
     private final Time time;
 
-    public Component(Uuid id, String text, Time time) {
+    Component(Uuid id, String text, Time time) {
       this.id = id;
       this.text = text;
       this.time = time;

@@ -1,13 +1,10 @@
 package codeu.chat.database;
 
-/**
- * Created by Jacob Warner on May 18, 2017
- */
-
 import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
 import codeu.chat.common.User;
 import codeu.chat.util.Logger;
+import codeu.chat.util.Method;
 import codeu.chat.util.Uuid;
 import com.mongodb.*;
 import com.mongodb.client.MongoCollection;
@@ -22,12 +19,9 @@ public class ChatAppDatabaseConnection {
     private MongoClient mongoClient;
     private MongoDatabase database;
 
-    //Default sign-in info for MongoDB
-    private String username;
-    private String password;
-    private String databasePath;
-    private String URI;
-
+    /**
+     * Default database connection
+     */
     public ChatAppDatabaseConnection(){
         try{
             MongoClientURI uriConnect =
@@ -48,15 +42,13 @@ public class ChatAppDatabaseConnection {
     /**
      * This constructor takes login info for MongoDB,
      * in case anyone wants to connect to their own
+     *
      * @param user: username for MongoDatabase
      * @param pass: password for MongoDatabase user
      * @param path: path to the database that the user belongs to
      */
     public ChatAppDatabaseConnection(String user, String pass, String path){
-        this.username = user;
-        this.password = pass;
-        this.databasePath = path;
-        this.URI = "mongodb://" + user + ":" + pass + "@codeu-shard-00-00-kskbs.mongodb.net:27017,codeu-shard-00-01-kskbs.mongodb.net:27017,codeu-shard-00-02-kskbs.mongodb.net:27017/" + path + "?ssl=true&replicaSet=CodeU-shard-0&authSource=admin";
+        String URI = "mongodb://" + user + ":" + pass + "@codeu-shard-00-00-kskbs.mongodb.net:27017,codeu-shard-00-01-kskbs.mongodb.net:27017,codeu-shard-00-02-kskbs.mongodb.net:27017/" + path + "?ssl=true&replicaSet=CodeU-shard-0&authSource=admin";
 
         try{
             MongoClientURI uriConnect = new MongoClientURI(URI);
@@ -72,6 +64,7 @@ public class ChatAppDatabaseConnection {
 
     /**
      * Convert a User to Document form and store in users collection
+     *
      * @param user: the user to be stored
      * @return boolean: true if the insertion of the Document is accepted by the database; false otherwise
      */
@@ -88,6 +81,7 @@ public class ChatAppDatabaseConnection {
 
     /**
      * Convert a Conversation to Document form and store in conversations collection
+     *
      * @param conversation: the conversation to be stored
      * @return boolean: true if the insertion of the Document is accepted by the database; false otherwise
      */
@@ -104,6 +98,7 @@ public class ChatAppDatabaseConnection {
 
     /**
      * Convert a Message to document form and store in messages collection
+     *
      * @param message: the message to store
      * @return boolean: true if the insertion of the Document is accepted by the database; false otherwise
      */
@@ -118,8 +113,9 @@ public class ChatAppDatabaseConnection {
         }
     }
 
-    //Not implemented - more to do
+
     public boolean removeUser(User user) {
+        Method.notImplemented();
         try{
             database.getCollection("messages").deleteMany(eq("author", user.id.id()));
             database.getCollection("conversations").deleteMany(eq("owner", user.id.id()));
@@ -131,8 +127,9 @@ public class ChatAppDatabaseConnection {
         }
     }
 
-    //Not implemented - more to do
+
     public boolean removeConversation(Conversation conversation) {
+        Method.notImplemented();
         try{
             database.getCollection("messages").deleteMany(eq("conversation", conversation.id));
             database.getCollection("conversations").deleteOne(eq("id",conversation.id.id()));
@@ -143,8 +140,9 @@ public class ChatAppDatabaseConnection {
         }
     }
 
-    //Not implemented - more to do
+
     public boolean removeMessage(Message message) {
+        Method.notImplemented();
         try{
             database.getCollection("messages").deleteOne(eq("id",message.id.id()));
             return true;
@@ -170,7 +168,7 @@ public class ChatAppDatabaseConnection {
      * Used to clear the database of its user, conversation, and message data collections.
      *
      * NOTE: No need for a "createDatabaseCollections" method, as MongoDB creates
-     * one was data is first entered in it.
+     * one when data is first entered in it.
      */
     public void removeDatabaseCollections(){
         removeMessagesCollection();
@@ -178,15 +176,15 @@ public class ChatAppDatabaseConnection {
         removeUsersCollection();
     }
 
-    public void removeMessagesCollection() {
+    private void removeMessagesCollection() {
         database.getCollection("messages").drop();
     }
 
-    public void removeConversationsCollection() {
+    private void removeConversationsCollection() {
         database.getCollection("conversations").drop();
     }
 
-    public void removeUsersCollection() {
+    private void removeUsersCollection() {
         database.getCollection("users").drop();
     }
 

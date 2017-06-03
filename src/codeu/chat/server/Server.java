@@ -25,12 +25,7 @@ import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.Collection;
 
-import codeu.chat.common.Conversation;
-import codeu.chat.common.ConversationSummary;
-import codeu.chat.common.Message;
-import codeu.chat.common.NetworkCode;
-import codeu.chat.common.Relay;
-import codeu.chat.common.User;
+import codeu.chat.common.*;
 import codeu.chat.database.ChatAppDatabaseConnection;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Serializers;
@@ -53,7 +48,6 @@ public final class Server {
   private final Model model = new Model();
   private final View view = new View(model);
   private final Controller controller;
-  private String[] DBInfo = new String[3];
 
   private final Relay relay;
   private Uuid lastSeen = Uuid.NULL;
@@ -66,7 +60,7 @@ public final class Server {
     if(databaseInfo == null){
       this.controller = new Controller(id, model, new ChatAppDatabaseConnection());
     }else{
-      this.DBInfo = databaseInfo.split(":");
+      String[] DBInfo = databaseInfo.split(":");
       this.controller = new Controller(id, model, new ChatAppDatabaseConnection(DBInfo[0], DBInfo[1], DBInfo[2]));
     }
 
@@ -291,8 +285,8 @@ public final class Server {
                                                 relayConversation.text(),
                                                 user.id,
                                                 relayConversation.time(),
-                                                "passHash",
-                                                  "salt");
+                                                "defaultPassword123!",
+                                                Password.generateSalt());
     }
 
     Message message = model.messageById().first(relayMessage.id());

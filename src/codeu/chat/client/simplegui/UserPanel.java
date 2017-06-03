@@ -22,17 +22,16 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import codeu.chat.client.ClientContext;
-import codeu.chat.common.Password;
 import codeu.chat.common.User;
 
 // NOTE: JPanel is serializable, but there is no need to serialize UserPanel
 // without the @SuppressWarnings, the compiler will complain of no override for serialVersionUID
 @SuppressWarnings("serial")
-public final class UserPanel extends JPanel {
+final class UserPanel extends JPanel {
 
   private final ClientContext clientContext;
 
-  public UserPanel(ClientContext clientContext) {
+  UserPanel(ClientContext clientContext) {
     super(new GridBagLayout());
     this.clientContext = clientContext;
     initialize();

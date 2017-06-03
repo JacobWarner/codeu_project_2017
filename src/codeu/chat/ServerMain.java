@@ -58,13 +58,7 @@ final class ServerMain {
     final byte[] secret = Secret.parse(args[1]);
     final int myPort = Integer.parseInt(args[2]);
 
-    // This is the directory where it is safe to store data across runs
-    // of the server.
-    final String persistentPath = args[3];
-
-    final RemoteAddress relayAddress = args.length > 4  ?
-                                       RemoteAddress.parse(args[4]) :
-                                       null;
+    final RemoteAddress relayAddress = args.length <= 3  ? null : RemoteAddress.parse(args[3]);
 
     Scanner scan = new Scanner(System.in);
     System.out.println("\n\n Would you like to connect to your own MongoDB database (y/n)? Otherwise, it will connect to the default database.");
