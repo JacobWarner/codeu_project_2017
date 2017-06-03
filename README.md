@@ -13,7 +13,7 @@ skills.
 ## ENVIRONMENT
 
 All instructions here are relative to a LINUX environment. There will be some
-differences if you are working on a non-LINUX system.
+differences if you are working on a non-LINUX system. We added another JAR file to the third party folder, so the shell scripts were changed to accommodate for that. However, we were unable to test them because none of us have a LINUX environment (forewarning).
 
 If you are in a Windows environment, please place yourself in the WindowsShellScripts folder and run the shell scripts from within the directory. I'd recommend using Git Bash.
 
