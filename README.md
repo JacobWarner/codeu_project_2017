@@ -13,8 +13,9 @@ skills.
 ## ENVIRONMENT
 
 All instructions here are relative to a LINUX environment. There will be some
-differences if you are working on a non-LINUX system. We will not support any
-other development environment.
+differences if you are working on a non-LINUX system. We added another JAR file to the third party folder, so the shell scripts were changed to accommodate for that. However, we were unable to test them because none of us have a LINUX environment (forewarning).
+
+If you are in a Windows environment, please place yourself in the WindowsShellScripts folder and run the shell scripts from within the directory. I'd recommend using Git Bash.
 
 This project was built using JAVA 7. It is recommended that you install
 JAVA&nbsp;7 when working with this project.
@@ -37,7 +38,7 @@ JAVA&nbsp;7 when working with this project.
      the following two commands in separate shells:
 
        ```
-       $ sh run_server.sh <team_id> <team_secret> <port> <persistent-dir>
+       $ sh run_server.sh <team_id> <team_secret> <port>
        $ sh run_client.sh <host> <port>
        ```
 
@@ -47,7 +48,7 @@ JAVA&nbsp;7 when working with this project.
        You can specify any integer value for `<team_id>`, and a value expressed
        in hexadecimal format (using numbers `0-9` and letters in the range
        `A-F`) for `<team_secret>` when you launch the server in your local setup
-       since it will not connect to the Relay server.
+       since it will not connect to the Relay server (we do not support the Relay server).
      + `<port>`: the TCP port that your Server will listen on for connections
        from the Client. You can use any value between 1024 and 65535, as long as
        there is no other service currently listening on that port in your
@@ -58,8 +59,6 @@ JAVA&nbsp;7 when working with this project.
          ```
 
        if the port is already in use.
-     + `<persistent-dir>`: the path where you want the server to save data between
-       runs.
 
      The startup arguments for `run_client.sh` are the following:
      + `<host>`: the hostname or IP address of the computer on which the server
@@ -67,6 +66,8 @@ JAVA&nbsp;7 when working with this project.
        you can use `localhost` here.
      + `<port>`: the port on which your server is listening. Must be the same
        port number you have specified when you launched `run_server.sh`.
+
+When you run the server, you will be asked if you want to connect to your own Cloud Database by MongoDB's Atlas. If you don't have an account, enter "n" and it will connect you to the default database.
 
 All running images write informational and exceptional events to log files.
 The default setting for log messages is "INFO". You may change this to get
@@ -76,8 +77,9 @@ which is built on top of `java.util.logging.Logger`, which you can refer to
 for more information.
 
 In addition to your team's client and server, the project also includes a
-Relay Server and a script that runs it (`run_relay.sh`).
-This is not needed to get started with the project.
+Relay Server and a script that runs it (`run_relay.sh`). We did not work on it further and it is not needed to get started with the project.
+
+Keep in mind that our command line client is updated, but there are still unfinished aspects of the simple gui that may cause issues with use. We recommend you use the command line version instead.
 
 
 ## Finding your way around the project
@@ -103,6 +105,10 @@ main packages/directories under `src/codeu/chat` are:
 
 Classes for building the two clients (`codeu.chat.ClientMain` and
 `codeu.chat.SimpleGuiClientMain`).
+
+### codeu.chat.database
+
+Two classes for data persistence with MongoDB
 
 ### codeu.chat.server
 
