@@ -19,7 +19,7 @@ public final class RemoteAddress {
   public final String host;
   public final int port;
 
-  public RemoteAddress(String host, int port) {
+  private RemoteAddress(String host, int port) {
     this.host = host;
     this.port = port;
   }

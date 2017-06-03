@@ -120,11 +120,11 @@ public final class Uuid {
   }
 
   // Check if two Uuids share the same root. This check is only one level deep.
-  public static boolean related(Uuid a, Uuid b) {
+  static boolean related(Uuid a, Uuid b) {
     return equals(a.root(), b.root());
   }
 
-  // Check if two Uuids represent the same value even if they are different refereces. This
+  // Check if two Uuids represent the same value even if they are different references. This
   // means that all ids from the tail to the root have the same ids.
   public static boolean equals(Uuid a, Uuid b) {
 
@@ -136,11 +136,11 @@ public final class Uuid {
       return true;
     }
 
-    if (a == null && b != null) {
+    if (a == null) {
       return false;
     }
 
-    if (a != null && b == null) {
+    if (b == null) {
       return false;
     }
 
@@ -168,7 +168,7 @@ public final class Uuid {
   private static String toString(Uuid id) {
     final StringBuilder build = new StringBuilder();
     buildString(id, build);
-    return String.format("[UUID:%s]", build.substring(1));  // index of 1 to skip initial '.'
+    return String.format("%s", build.substring(1));  // index of 1 to skip initial '.'
   }
 
   private static void buildString(Uuid current, StringBuilder build) {

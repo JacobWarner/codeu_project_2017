@@ -16,9 +16,10 @@
 package codeu.chat;
 
 import java.io.IOException;
+import java.util.Scanner;
 
-import codeu.chat.common.Relay;
-import codeu.chat.common.Secret;
+
+import codeu.chat.common.*;
 import codeu.chat.server.NoOpRelay;
 import codeu.chat.server.RemoteRelay;
 import codeu.chat.server.Server;
@@ -46,9 +47,6 @@ final class ServerMain {
 
     LOG.info("============================= START OF LOG =============================");
 
-    final int myPort = Integer.parseInt(args[2]);
-    final byte[] secret = Secret.parse(args[1]);
-
     Uuid id = null;
     try {
       id = Uuid.parse(args[0]);
@@ -57,13 +55,22 @@ final class ServerMain {
       System.exit(1);
     }
 
-    // This is the directory where it is safe to store data accross runs
-    // of the server.
-    final String persistentPath = args[3];
+    final byte[] secret = Secret.parse(args[1]);
+    final int myPort = Integer.parseInt(args[2]);
 
-    final RemoteAddress relayAddress = args.length > 4 ?
-                                       RemoteAddress.parse(args[4]) :
-                                       null;
+    final RemoteAddress relayAddress = args.length <= 3  ? null : RemoteAddress.parse(args[3]);
+
+    Scanner scan = new Scanner(System.in);
+    System.out.println("\n\n Would you like to connect to your own MongoDB database (y/n)? Otherwise, it will connect to the default database.");
+    char q = scan.next().charAt(0);
+    String info = null;
+    if(q == 'y' || q == 'Y'){
+        System.out.println("Please enter USERNAME:PASSWORD:DATABASE_PATH. For example, Bob:Password1234:TestDatabase.");
+        info = scan.next();
+    }
+    scan.close();
+
+    final String databaseInfo = info;
 
     try (
         final ConnectionSource serverSource = ServerConnectionSource.forPort(myPort);
@@ -71,25 +78,23 @@ final class ServerMain {
     ) {
 
       LOG.info("Starting server...");
-      runServer(id, secret, serverSource, relaySource);
+      runServer(id, secret, serverSource, relaySource, databaseInfo);
 
     } catch (IOException ex) {
 
       LOG.error(ex, "Failed to establish connections");
-
     }
   }
 
   private static void runServer(Uuid id,
                                 byte[] secret,
                                 ConnectionSource serverSource,
-                                ConnectionSource relaySource) {
+                                ConnectionSource relaySource,
+                                String databaseInfo){
 
-    final Relay relay = relaySource == null ?
-                        new NoOpRelay() :
-                        new RemoteRelay(relaySource);
+    final Relay relay = relaySource == null ? new NoOpRelay() : new RemoteRelay(relaySource);
 
-    final Server server = new Server(id, secret, relay);
+    final Server server = new Server(id, secret, relay, databaseInfo);
 
     LOG.info("Created server.");
 

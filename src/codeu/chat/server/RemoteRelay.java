@@ -40,7 +40,7 @@ public final class RemoteRelay implements Relay {
     private final Time time;
     private final String text;
 
-    public Component(Uuid id, Time time, String text) {
+    Component(Uuid id, Time time, String text) {
       this.id = id;
       this.time = time;
       this.text = text;
@@ -152,7 +152,7 @@ public final class RemoteRelay implements Relay {
         LOG.error("Server did not handle RELAY_WRITE_REQUEST");
       }
     } catch (Exception ex) {
-      LOG.error(ex, "Unexpected error when sending RELAY_WRITE_REQUEST");;
+      LOG.error(ex, "Unexpected error when sending RELAY_WRITE_REQUEST");
     }
 
     return result;

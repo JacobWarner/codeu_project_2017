@@ -31,9 +31,9 @@ public final class Timeline {
   private static final class Event implements Comparable<Event> {
 
     public final long time;
-    public final Runnable callback;
+    final Runnable callback;
 
-    public Event(long time, Runnable callback) {
+    Event(long time, Runnable callback) {
       this.time = time;
       this.callback = callback;
     }
@@ -50,7 +50,7 @@ public final class Timeline {
   private boolean running = true;
 
   // This thread is used to track the time of events and moves events from the
-  // "backlog" queue to the "todo" queue when it is time to execute. They are
+  // "backlog" queue to the "to-do" queue when it is time to execute. They are
   // separated to allow this thread to be safely interrupted.
   private final Thread scheduler = new Thread() {
     @Override
@@ -74,7 +74,7 @@ public final class Timeline {
           final long now = System.currentTimeMillis();
 
           // Check which queue the event should be added to. If it
-          // is time to execute, it should be added to the "todo"
+          // is time to execute, it should be added to the "to-do"
           // queue. If it is not time, it should be added back to the
           // "backlog".
           // If the item is added back to the backlog, we know how long

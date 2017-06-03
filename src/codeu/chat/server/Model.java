@@ -17,7 +17,6 @@ package codeu.chat.server;
 import java.util.Comparator;
 
 import codeu.chat.common.Conversation;
-import codeu.chat.common.ConversationSummary;
 import codeu.chat.common.LinearUuidGenerator;
 import codeu.chat.common.Message;
 import codeu.chat.common.User;
@@ -35,9 +34,9 @@ public final class Model {
 
       if (a == b) { return 0; }
 
-      if (a == null && b != null) { return -1; }
+      if (a == null) { return -1; }
 
-      if (a != null && b == null) { return 1; }
+      if (b == null) { return 1; }
 
       final int order = Integer.compare(a.id(), b.id());
       return order == 0 ? compare(a.root(), b.root()) : order;
@@ -76,19 +75,19 @@ public final class Model {
     userByText.insert(user.name, user);
   }
 
-  public StoreAccessor<Uuid, User> userById() {
+  StoreAccessor<Uuid, User> userById() {
     return userById;
   }
 
-  public StoreAccessor<Time, User> userByTime() {
+  StoreAccessor<Time, User> userByTime() {
     return userByTime;
   }
 
-  public StoreAccessor<String, User> userByText() {
+  StoreAccessor<String, User> userByText() {
     return userByText;
   }
 
-  public Uuid userGeneration() {
+  Uuid userGeneration() {
     return currentUserGeneration;
   }
 
@@ -98,15 +97,15 @@ public final class Model {
     conversationByText.insert(conversation.title, conversation);
   }
 
-  public StoreAccessor<Uuid, Conversation> conversationById() {
+  StoreAccessor<Uuid, Conversation> conversationById() {
     return conversationById;
   }
 
-  public StoreAccessor<Time, Conversation> conversationByTime() {
+  StoreAccessor<Time, Conversation> conversationByTime() {
     return conversationByTime;
   }
 
-  public StoreAccessor<String, Conversation> conversationByText() {
+  StoreAccessor<String, Conversation> conversationByText() {
     return conversationByText;
   }
 
@@ -116,15 +115,15 @@ public final class Model {
     messageByText.insert(message.content, message);
   }
 
-  public StoreAccessor<Uuid, Message> messageById() {
+  StoreAccessor<Uuid, Message> messageById() {
     return messageById;
   }
 
-  public StoreAccessor<Time, Message> messageByTime() {
+  StoreAccessor<Time, Message> messageByTime() {
     return messageByTime;
   }
 
-  public StoreAccessor<String, Message> messageByText() {
+  StoreAccessor<String, Message> messageByText() {
     return messageByText;
   }
 }

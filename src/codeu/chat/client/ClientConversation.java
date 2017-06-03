@@ -14,9 +14,11 @@
 
 package codeu.chat.client;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import codeu.chat.common.Conversation;
 import codeu.chat.common.ConversationSummary;
@@ -56,16 +58,13 @@ public final class ClientConversation {
   }
 
   // Validate the title of the conversation
-  static public boolean isValidTitle(String title) {
-    boolean clean = true;
-    if ((title.length() <= 0) || (title.length() > 64)) {
-      clean = false;
-    } else {
-
-      // TODO: check for invalid characters
-
+  private static boolean isValidTitle(String title) {
+    if(title == null || title.equals("") || title.length() <= 1 || title.length() > 64){
+      return false;
     }
-    return clean;
+    Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~`]");
+    Matcher m = p.matcher(title);
+    return !m.find();
   }
 
   public boolean hasCurrent() {
@@ -86,27 +85,26 @@ public final class ClientConversation {
     printConversation(currentSummary, userContext);
   }
 
-  public void startConversation(String title, Uuid owner) {
-    final boolean validInputs = isValidTitle(title);
+  public void startConversation(String title, Uuid owner, String passHash, String salt) {
+    final boolean validInputs = (isValidTitle(title)) && (owner != null) && (ClientUser.isValidPassword(passHash));
 
-    final Conversation conv = (validInputs) ? controller.newConversation(title, owner) : null;
+    final Conversation conv = (validInputs) ? controller.newConversation(title, owner, passHash, salt) : null;
 
     if (conv == null) {
-      System.out.format("Error: conversation not created - %s.\n",
-          (validInputs) ? "server failure" : "bad input value");
+      System.out.println(String.format("Error: conversation not created - %s.\n",
+          (validInputs) ? "server failure" : "bad input value"));
     } else {
-      LOG.info("New conversation: Title= \"%s\" UUID= %s", conv.title, conv.id);
+      System.out.println(String.format("New conversation: Title= \"%s\" UUID= %s\n", conv.title, conv.id));
 
-      currentSummary = conv.summary;
-
-      updateAllConversations(currentSummary != null);
+      updateAllConversations(true);
+      setCurrent(conv.summary);
     }
   }
 
-  public void setCurrent(ConversationSummary conv) { currentSummary = conv; }
+  public void setCurrent(ConversationSummary conversation) { currentSummary = conversation; }
 
   public void showAllConversations() {
-    updateAllConversations(false);
+    updateAllConversations(true);
 
     for (final ConversationSummary c : summariesByUuid.values()) {
       printConversation(c, userContext);
@@ -114,15 +112,8 @@ public final class ClientConversation {
   }
 
   // Get a single conversation from the server.
-  public Conversation getConversation(Uuid conversationId) {
-    for (final Conversation c : view.getConversations(Arrays.asList(conversationId))) {
-      return c;
-    }
-    return null;
-  }
-
-  private void joinConversation(String match) {
-    Method.notImplemented();
+  Conversation getConversation(Uuid conversationId) {
+    return view.getConversations(Collections.singletonList(conversationId)).iterator().next();
   }
 
   private void leaveCurrentConversation() {
@@ -157,7 +148,6 @@ public final class ClientConversation {
   // If the input currentChanged is true, then re-establish the state of
   // the current Conversation, including its messages.
   public void updateAllConversations(boolean currentChanged) {
-
     summariesByUuid.clear();
     summariesSortedByTitle = new Store<>(String.CASE_INSENSITIVE_ORDER);
 
@@ -181,11 +171,51 @@ public final class ClientConversation {
       final String ownerName = (name == null) ? "" : String.format(" (%s)", name);
       System.out.format(" Title: %s\n", c.title);
       System.out.format("    Id: %s owner: %s%s created %s\n", c.id, c.owner, ownerName, c.creation);
+      if(c.isPrivate()){
+        System.out.format("Status: Private\n\n");
+      }else{
+        System.out.format("Status: Public\n\n");
+      }
+
     }
   }
 
-  // Print Conversation outside of User context.
   public static void printConversation(ConversationSummary c) {
     printConversation(c, null);
   }
+
+  //Checks if the conversation exists
+  public boolean exists(String title){
+    updateAllConversations(true);
+    ConversationSummary conSum = summariesSortedByTitle.first(title);
+    return (conSum != null);
+  }
+
+
+  //TODO: If there are two public conversations with the same title, we run into an issue...
+  public boolean joinConversation(String title){
+    return joinConversation(title, "defaultPassword123!");
+  }
+
+
+  public boolean joinConversation(String title, String password){
+    if(!userContext.hasCurrent()){
+      System.out.println("Join failed. Not signed into a user.");
+      return false;
+    }
+
+    if(exists(title)){
+      ConversationSummary conn = summariesSortedByTitle.first(title);
+      if(conn!= null && conn.isPassword(password)) {
+        setCurrent(conn);
+        return true;
+      }
+      else {
+        System.out.println("Incorrect password. Staying in current conversation.");
+        return false;
+      }
+    }
+    return false;
+  }
+
 }

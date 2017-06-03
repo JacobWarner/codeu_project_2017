@@ -12,24 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * NOTE: The Relay server is not up-to-date with our additions (such as passwords) because
+ * the Relay server was not of high priority.
+ */
 
 package codeu.chat.server;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Arrays;
 import java.util.Collection;
 
-import codeu.chat.common.Conversation;
-import codeu.chat.common.ConversationSummary;
-import codeu.chat.common.LinearUuidGenerator;
-import codeu.chat.common.Message;
-import codeu.chat.common.NetworkCode;
-import codeu.chat.common.Relay;
-import codeu.chat.common.User;
+import codeu.chat.common.*;
+import codeu.chat.database.ChatAppDatabaseConnection;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Serializers;
 import codeu.chat.util.Time;
@@ -55,12 +52,18 @@ public final class Server {
   private final Relay relay;
   private Uuid lastSeen = Uuid.NULL;
 
-  public Server(final Uuid id, final byte[] secret, final Relay relay) {
+  public Server(final Uuid id, final byte[] secret, final Relay relay, final String databaseInfo){
 
     this.id = id;
     this.secret = Arrays.copyOf(secret, secret.length);
 
-    this.controller = new Controller(id, model);
+    if(databaseInfo == null){
+      this.controller = new Controller(id, model, new ChatAppDatabaseConnection());
+    }else{
+      String[] DBInfo = databaseInfo.split(":");
+      this.controller = new Controller(id, model, new ChatAppDatabaseConnection(DBInfo[0], DBInfo[1], DBInfo[2]));
+    }
+
     this.relay = relay;
 
     timeline.scheduleNow(new Runnable() {
@@ -84,6 +87,8 @@ public final class Server {
         timeline.scheduleIn(RELAY_REFRESH_MS, this);
       }
     });
+
+    this.controller.loadDatabase();
   }
 
   public void handleConnection(final Connection connection) {
@@ -99,6 +104,7 @@ public final class Server {
               connection.out());
 
           LOG.info("Connection handled: %s", success ? "ACCEPTED" : "REJECTED");
+
         } catch (Exception ex) {
 
           LOG.error(ex, "Exception while handling connection.");
@@ -137,8 +143,9 @@ public final class Server {
     } else if (type == NetworkCode.NEW_USER_REQUEST) {
 
       final String name = Serializers.STRING.read(in);
-
-      final User user = controller.newUser(name);
+      final String passHash = Serializers.STRING.read(in);
+      final String salt = Serializers.STRING.read(in);
+      final User user = controller.newUser(name, passHash, salt);
 
       Serializers.INTEGER.write(out, NetworkCode.NEW_USER_RESPONSE);
       Serializers.nullable(User.SERIALIZER).write(out, user);
@@ -147,8 +154,10 @@ public final class Server {
 
       final String title = Serializers.STRING.read(in);
       final Uuid owner = Uuid.SERIALIZER.read(in);
+      final String passHash = Serializers.STRING.read(in);
+      final String salt = Serializers.STRING.read(in);
 
-      final Conversation conversation = controller.newConversation(title, owner);
+      final Conversation conversation = controller.newConversation(title, owner, passHash, salt);
 
       Serializers.INTEGER.write(out, NetworkCode.NEW_CONVERSATION_RESPONSE);
       Serializers.nullable(Conversation.SERIALIZER).write(out, conversation);
@@ -257,12 +266,12 @@ public final class Server {
 
     final Relay.Bundle.Component relayUser = bundle.user();
     final Relay.Bundle.Component relayConversation = bundle.conversation();
-    final Relay.Bundle.Component relayMessage = bundle.user();
+    final Relay.Bundle.Component relayMessage = bundle.message();
 
     User user = model.userById().first(relayUser.id());
 
     if (user == null) {
-      user = controller.newUser(relayUser.id(), relayUser.text(), relayUser.time());
+      user = controller.newUser(relayUser.id(), relayUser.text(), relayUser.time(), "Fix onBundle passwordHash", "Fix onBundle Server salt");
     }
 
     Conversation conversation = model.conversationById().first(relayConversation.id());
@@ -275,7 +284,9 @@ public final class Server {
       conversation = controller.newConversation(relayConversation.id(),
                                                 relayConversation.text(),
                                                 user.id,
-                                                relayConversation.time());
+                                                relayConversation.time(),
+                                                "defaultPassword123!",
+                                                Password.generateSalt());
     }
 
     Message message = model.messageById().first(relayMessage.id());
@@ -289,6 +300,7 @@ public final class Server {
     }
   }
 
+  //See NOTE at the top
   private Runnable createSendToRelayEvent(final Uuid userId,
                                           final Uuid conversationId,
                                           final Uuid messageId) {

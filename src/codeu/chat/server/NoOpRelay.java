@@ -61,6 +61,6 @@ public final class NoOpRelay implements Relay {
                                        Uuid root,
                                        int range) {
 
-    return new ArrayList<Relay.Bundle>();
+    return new ArrayList<>();
   }
 }

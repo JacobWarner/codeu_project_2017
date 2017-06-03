@@ -69,6 +69,5 @@ public final class Message {
     this.creation = creation;
     this.author = author;
     this.content = content;
-
   }
 }

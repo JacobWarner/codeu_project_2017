@@ -20,7 +20,7 @@ final class StoreLink<KEY, VALUE> {
   public final VALUE value;
   public StoreLink<KEY, VALUE> next;
 
-  public StoreLink(KEY key, VALUE value, StoreLink<KEY, VALUE> next) {
+  StoreLink(KEY key, VALUE value, StoreLink<KEY, VALUE> next) {
     this.key = key;
     this.value = value;
     this.next = next;

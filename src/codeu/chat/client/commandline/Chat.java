@@ -20,18 +20,37 @@ import codeu.chat.client.ClientContext;
 import codeu.chat.client.Controller;
 import codeu.chat.client.View;
 import codeu.chat.common.ConversationSummary;
+import codeu.chat.common.Password;
 import codeu.chat.util.Logger;
+import codeu.chat.util.Method;
 
 // Chat - top-level client application.
 public final class Chat {
 
-  private final static Logger.Log LOG = Logger.newLog(Chat.class);
+  private static final Logger.Log LOG = Logger.newLog(Chat.class);
 
   private static final String PROMPT = ">>";
 
-  private final static int PAGE_SIZE = 10;
+  private static final String EXIT = "exit";
+  private static final String HELP = "help";
+  private static final String SIGN_IN = "sign-in";
+  private static final String SIGN_OUT = "sign-out";
+  private static final String CURRENT = "current";
+  private static final String U_ADD = "u-add";
+  private static final String U_LIST_ALL = "u-list-all";
+  private static final String C_ADD = "c-add";
+  private static final String C_LIST_ALL = "c-list-all";
+  private static final String C_SELECT = "c-select";
+  private static final String C_PUBLIC = "c-public";
+  private static final String C_PRIVATE = "c-private";
+  private static final String M_ADD = "m-add";
+  private static final String M_LIST_ALL = "m-list-all";
+  private static final String M_SHOW = "m-show";
 
   private boolean alive = true;
+  private Scanner lineScanner;
+  private Scanner tokenScanner;
+
 
   private final ClientContext clientContext;
 
@@ -54,12 +73,12 @@ public final class Chat {
     System.out.println("Conversation commands:");
     System.out.println("   c-add <title>    - add a new conversation.");
     System.out.println("   c-list-all       - list all conversations known to system.");
-    System.out.println("   c-select <index> - select conversation from list.");
+    System.out.println("   c-public <conversation> - select public conversation to join.");
+    System.out.println("   c-private <conversation> - select private conversation to join");
     System.out.println("Message commands:");
     System.out.println("   m-add <body>     - add a new message to the current conversation.");
     System.out.println("   m-list-all       - list all messages in the current conversation.");
-    System.out.println("   m-next <index>   - index of next message to view.");
-    System.out.println("   m-show <count>   - show next <count> messages.");
+    System.out.println("   m-show <count>   - show <count> previous messages.");
   }
 
   // Prompt for new command.
@@ -67,135 +86,219 @@ public final class Chat {
     System.out.print(PROMPT);
   }
 
-  // Parse and execute a single command.
-  private void doOneCommand(Scanner lineScanner) {
 
-    final Scanner tokenScanner = new Scanner(lineScanner.nextLine());
-    if (!tokenScanner.hasNext()) {
+
+  // Parse and execute a single command.
+  private void doOneCommand(Scanner lineScan) {
+    final Scanner tokenScan = new Scanner(lineScan.nextLine());
+    if (!tokenScan.hasNext()) {
       return;
     }
+
+    //Setting class scanners for private methods to use
+    lineScanner = lineScan;
+    tokenScanner = tokenScan;
+
     final String token = tokenScanner.next();
 
-    if (token.equals("exit")) {
-
-      alive = false;
-
-    } else if (token.equals("help")) {
-
-      help();
-
-    } else if (token.equals("sign-in")) {
-
-      if (!tokenScanner.hasNext()) {
-        System.out.println("ERROR: No user name supplied.");
-      } else {
-        signInUser(tokenScanner.nextLine().trim());
-      }
-
-    } else if (token.equals("sign-out")) {
-
-      if (!clientContext.user.hasCurrent()) {
-        System.out.println("ERROR: Not signed in.");
-      } else {
-        signOutUser();
-      }
-
-    } else if (token.equals("current")) {
-
-      showCurrent();
-
-    } else if (token.equals("u-add")) {
-
-      if (!tokenScanner.hasNext()) {
-        System.out.println("ERROR: Username not supplied.");
-      } else {
-        addUser(tokenScanner.nextLine().trim());
-      }
-
-    } else if (token.equals("u-list-all")) {
-
-      showAllUsers();
-
-    } else if (token.equals("c-add")) {
-
-      if (!clientContext.user.hasCurrent()) {
-        System.out.println("ERROR: Not signed in.");
-      } else {
-        if (!tokenScanner.hasNext()) {
-          System.out.println("ERROR: Conversation title not supplied.");
-        } else {
-          final String title = tokenScanner.nextLine().trim();
-          clientContext.conversation.startConversation(title, clientContext.user.getCurrent().id);
-        }
-      }
-
-    } else if (token.equals("c-list-all")) {
-
-      clientContext.conversation.showAllConversations();
-
-    } else if (token.equals("c-select")) {
-
-      selectConversation(lineScanner);
-
-    } else if (token.equals("m-add")) {
-
-      if (!clientContext.user.hasCurrent()) {
-        System.out.println("ERROR: Not signed in.");
-      } else if (!clientContext.conversation.hasCurrent()) {
-        System.out.println("ERROR: No conversation selected.");
-      } else {
-        if (!tokenScanner.hasNext()) {
-          System.out.println("ERROR: Message body not supplied.");
-        } else {
-          clientContext.message.addMessage(clientContext.user.getCurrent().id,
-              clientContext.conversation.getCurrentId(),
-              tokenScanner.nextLine().trim());
-        }
-      }
-
-    } else if (token.equals("m-list-all")) {
-
-      if (!clientContext.conversation.hasCurrent()) {
-        System.out.println("ERROR: No conversation selected.");
-      } else {
-        clientContext.message.showAllMessages();
-      }
-
-    } else if (token.equals("m-next")) {
-
-      // TODO: Implement m-next command to jump to an index in the message chain.
-      if (!clientContext.conversation.hasCurrent()) {
-        System.out.println("ERROR: No conversation selected.");
-      } else if (!tokenScanner.hasNextInt()) {
-        System.out.println("Command requires an integer message index.");
-      } else {
-        clientContext.message.selectMessage(tokenScanner.nextInt());
-      }
-
-    } else if (token.equals("m-show")) {
-
-      // TODO: Implement m-show command to show N messages (currently just show all)
-      if (!clientContext.conversation.hasCurrent()) {
-        System.out.println("ERROR: No conversation selected.");
-      } else {
-        final int count = (tokenScanner.hasNextInt()) ? tokenScanner.nextInt() : 1;
-        clientContext.message.showMessages(count);
-      }
-
-    } else {
-
-      System.out.format("Command not recognized: %s\n", token);
-      System.out.format("Command line rejected: %s%s\n", token,
-          (tokenScanner.hasNext()) ? tokenScanner.nextLine() : "");
-      System.out.println("Type \"help\" for help.");
+    switch(token) {
+      case EXIT:
+        alive = false;
+        break;
+      case HELP:
+        help();
+        break;
+      case SIGN_IN:
+        signIn();
+        break;
+      case SIGN_OUT:
+        signOut();
+        break;
+      case CURRENT:
+        showCurrent();
+        break;
+      case U_ADD:
+        userAdd();
+        break;
+      case U_LIST_ALL:
+        showAllUsers();
+        break;
+      case C_ADD:
+        conversationAdd();
+        break;
+      case C_LIST_ALL:
+        clientContext.conversation.showAllConversations();
+        break;
+      case C_SELECT:
+        System.out.println("Please use c-private or c-public");
+        break;
+      case C_PUBLIC:
+        joinPublicConversation();
+        break;
+      case C_PRIVATE:
+        joinPrivateConversation();
+        break;
+      case M_ADD:
+        messageAdd();
+        break;
+      case M_LIST_ALL:
+        messageListAll();
+        break;
+//      case M_NEXT:
+//        messageNext();
+//        break;
+      case M_SHOW:
+        messageShow();
+        break;
+      default:
+        noCommand(token);
+        break;
     }
     tokenScanner.close();
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////SWITCH CASE METHODS/////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  private void signIn(){
+    if (!tokenScanner.hasNext()) {
+      System.out.println("ERROR: No user name supplied.");
+    } else {
+      String userName = tokenScanner.nextLine().trim();
+      System.out.print("Please enter the password: ");
+      String password = lineScanner.next().trim();
+      signInUser(userName, password);
+    }
+  }
+
+  private void signOut() {
+    if (!clientContext.user.hasCurrent()) {
+      System.out.println("ERROR: Not signed in.");
+    } else {
+      signOutUser();
+    }
+  }
+
+  private void userAdd() {
+    if (!tokenScanner.hasNext()) {
+      System.out.println("ERROR: Username not supplied.");
+    } else {
+      System.out.print("Please enter a password: ");
+      String password = lineScanner.nextLine().trim();
+      addUser(tokenScanner.nextLine().trim(), password);
+    }
+  }
+
+  private void conversationAdd() {
+    if (!clientContext.user.hasCurrent()) {
+      System.out.println("ERROR: Not signed in.");
+    } else {
+      if (!tokenScanner.hasNext()) {
+        System.out.println("ERROR: Conversation title not supplied.");
+      } else {
+        final String title = tokenScanner.nextLine().trim();
+        String response = null;
+        boolean isPrivate = false;
+        String passHash = "defaultPassword123!";
+        String salt = Password.generateSalt();
+        while (response == null) {
+          System.out.print("Add password to conversation? (y/n): ");
+          response = lineScanner.nextLine().trim();
+          if (response.equalsIgnoreCase("y")) isPrivate = true;
+          else if (response.equalsIgnoreCase("n")) isPrivate = false;
+        }
+        if (isPrivate) {
+          System.out.print("Please enter a password: ");
+          passHash = Password.getHashCode(lineScanner.nextLine().trim(), salt);
+        }
+        clientContext.conversation.startConversation(
+                title, clientContext.user.getCurrent().id, passHash, salt);
+      }
+    }
+  }
+
+  private void joinPublicConversation() {
+    if (!tokenScanner.hasNext()) {
+      System.out.println("ERROR: No conversation name supplied.");
+    } else {
+      String name = tokenScanner.nextLine().trim();
+      joinConversation(name);
+    }
+  }
+
+  private void joinPrivateConversation() {
+    if (!tokenScanner.hasNext()) {
+      System.out.println("ERROR: No conversation name supplied.");
+    } else {
+      String name = tokenScanner.nextLine().trim();
+      System.out.print("Please enter the password: ");
+      String password = lineScanner.next().trim();
+      joinConversation(name, password);
+    }
+  }
+
+  private void messageAdd() {
+    if (!clientContext.user.hasCurrent()) {
+      System.out.println("ERROR: Not signed in.");
+    } else if (!clientContext.conversation.hasCurrent()) {
+      System.out.println("ERROR: No conversation selected.");
+    } else {
+      if (!tokenScanner.hasNext()) {
+        System.out.println("ERROR: Message body not supplied.");
+      } else {
+        clientContext.message.addMessage(
+                clientContext.user.getCurrent().id,
+                clientContext.conversation.getCurrentId(),
+                tokenScanner.nextLine().trim());
+      }
+    }
+  }
+
+  private void messageListAll() {
+    if (!clientContext.conversation.hasCurrent()) {
+      System.out.println("ERROR: No conversation selected.");
+    } else {
+      clientContext.message.showAllMessages();
+    }
+  }
+
+  // TODO: Implement m-next command to jump to an index in the message chain.
+  private void messageNext() {
+    Method.notImplemented();
+    if (!clientContext.conversation.hasCurrent()) {
+      System.out.println("ERROR: No conversation selected.");
+    } else if (!tokenScanner.hasNextInt()) {
+      System.out.println("Command requires an integer message index.");
+    } else {
+      clientContext.message.selectMessage(tokenScanner.nextInt());
+    }
+  }
+
+  private void messageShow() {
+    if (!clientContext.conversation.hasCurrent()) {
+      System.out.println("ERROR: No conversation selected.");
+    } else {
+      final int count = (tokenScanner.hasNextInt()) ? tokenScanner.nextInt() : 1;
+      clientContext.message.showMessages(count);
+    }
+  }
+
+  private void noCommand(String token) {
+    System.out.format("Command not recognized: %s\n", token);
+    System.out.format(
+            "Command line rejected: %s%s\n",
+            token, (tokenScanner.hasNext()) ? tokenScanner.nextLine() : "");
+    System.out.println("Type \"help\" for help.");
+  }
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////END OF SWITCH CASE METHODS/////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
   // Sign in a user.
-  private void signInUser(String name) {
-    if (!clientContext.user.signInUser(name)) {
-      System.out.println("Error: sign in failed (invalid name?)");
+  private void signInUser(String name, String password) {
+    if (!clientContext.user.signInUser(name, password)) {
+      System.out.println("Error: sign in failed (invalid name or password?)");
     }
   }
 
@@ -203,71 +306,54 @@ public final class Chat {
   private void signOutUser() {
     if (!clientContext.user.signOutUser()) {
       System.out.println("Error: sign out failed (not signed in?)");
-    }
-  }
-
-  // Helper for showCurrent() - show message info.
-  private void showCurrentMessage() {
-    if (clientContext.conversation.currentMessageCount() == 0) {
-      System.out.println(" -- no messages in conversation --");
-    } else {
-      System.out.format(" conversation has %d messages.\n",
-                        clientContext.conversation.currentMessageCount());
-      if (!clientContext.message.hasCurrent()) {
-        System.out.println(" -- no current message --");
-      } else {
-        System.out.println("\nCurrent Message:");
-        clientContext.message.showCurrent();
+    }else{
+      if(clientContext.conversation.hasCurrent()){
+        clientContext.conversation.setCurrent(null);
       }
     }
   }
 
-  // Show current user, conversation, message, if any
+  // Helper for showCurrent() - shows message info.
+  // Changed this to show most recent message - this is
+  // information the user would want to know over the head message
+  private void showCurrentMessage() {
+    if (clientContext.conversation.currentMessageCount() == 0) {
+      System.out.println(" -- no messages in conversation --");
+    } else {
+      System.out.format(
+          " conversation has %d messages.\n", clientContext.conversation.currentMessageCount());
+      if (!clientContext.message.hasCurrent()) {
+        System.out.println(" -- no current message --");
+      } else {
+        System.out.println("\nMost Recent Message:");
+        clientContext.message.showRecent(clientContext.conversation.currentMessageCount());
+      }
+    }
+  }
+
+  // Show current user, conversation, and message(s)
   private void showCurrent() {
-    boolean displayed = false;
     if (clientContext.user.hasCurrent()) {
       System.out.println("User:");
       clientContext.user.showCurrent();
       System.out.println();
-      displayed = true;
+    }else{
+      System.out.println("No current user.\n");
     }
 
     if (clientContext.conversation.hasCurrent()) {
       System.out.println("Conversation:");
       clientContext.conversation.showCurrent();
-
       showCurrentMessage();
-
       System.out.println();
-      displayed = true;
-    }
-
-    if (!displayed) {
-      System.out.println("No current user or conversation.");
-    }
-  }
-
-  // Display current user.
-  private void showCurrentUser() {
-    if (clientContext.user.hasCurrent()) {
-      clientContext.user.showCurrent();
-    } else {
-      System.out.println("No current user.");
-    }
-  }
-
-  // Display current conversation.
-  private void showCurrentConversation() {
-    if (clientContext.conversation.hasCurrent()) {
-      clientContext.conversation.showCurrent();
-    } else {
-      System.out.println(" No current conversation.");
+    }else{
+      System.out.println("No current conversation.");
     }
   }
 
   // Add a new user.
-  private void addUser(String name) {
-    clientContext.user.addUser(name);
+  private void addUser(String name, String password) {
+    clientContext.user.addUser(name, password);
   }
 
   // Display all users known to server.
@@ -291,33 +377,21 @@ public final class Chat {
     return alive;
   }
 
-  public void selectConversation(Scanner lineScanner) {
-
-    clientContext.conversation.updateAllConversations(false);
-    final int selectionSize = clientContext.conversation.conversationsCount();
-    System.out.format("Selection contains %d entries.\n", selectionSize);
-
+  private void joinConversation(String name, String password) {
     final ConversationSummary previous = clientContext.conversation.getCurrent();
-    ConversationSummary newCurrent = null;
+    ConversationSummary newCurrent;
 
-    if (selectionSize == 0) {
-      System.out.println("Nothing to select.");
-    } else {
-      final ListNavigator<ConversationSummary> navigator =
-          new ListNavigator<ConversationSummary>(
-              clientContext.conversation.getConversationSummaries(),
-              lineScanner, PAGE_SIZE);
-      if (navigator.chooseFromList()) {
-        newCurrent = navigator.getSelectedChoice();
-        clientContext.message.resetCurrent(newCurrent != previous);
-        System.out.format("OK. Conversation \"%s\" selected.\n", newCurrent.title);
-      } else {
-        System.out.println("OK. Current Conversation is unchanged.");
-      }
-    }
-    if (newCurrent != previous) {
-      clientContext.conversation.setCurrent(newCurrent);
+    clientContext.conversation.joinConversation(name, password);
+    newCurrent = clientContext.conversation.getCurrent();
+
+    //Executed if the selected conversation exists and is new
+    if(newCurrent != null && newCurrent != previous){
       clientContext.conversation.updateAllConversations(true);
+      clientContext.message.resetCurrent(true);
     }
+  }
+
+  private void joinConversation(String name){
+    joinConversation(name, "defaultPassword123!");
   }
 }

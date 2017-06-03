@@ -14,10 +14,6 @@
 
 package codeu.chat.client;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.lang.Thread;
-
 import codeu.chat.common.BasicController;
 import codeu.chat.common.Conversation;
 import codeu.chat.common.Message;
@@ -31,7 +27,7 @@ import codeu.chat.util.connections.ConnectionSource;
 
 public class Controller implements BasicController {
 
-  private final static Logger.Log LOG = Logger.newLog(Controller.class);
+  private static final Logger.Log LOG = Logger.newLog(Controller.class);
 
   private final ConnectionSource source;
 
@@ -65,7 +61,7 @@ public class Controller implements BasicController {
   }
 
   @Override
-  public User newUser(String name) {
+  public User newUser(String name, String passwordHash, String salt) {
 
     User response = null;
 
@@ -73,6 +69,9 @@ public class Controller implements BasicController {
 
       Serializers.INTEGER.write(connection.out(), NetworkCode.NEW_USER_REQUEST);
       Serializers.STRING.write(connection.out(), name);
+      Serializers.STRING.write(connection.out(), passwordHash);
+      Serializers.STRING.write(connection.out(), salt);
+
       LOG.info("newUser: Request completed.");
 
       if (Serializers.INTEGER.read(connection.in()) == NetworkCode.NEW_USER_RESPONSE) {
@@ -90,7 +89,7 @@ public class Controller implements BasicController {
   }
 
   @Override
-  public Conversation newConversation(String title, Uuid owner)  {
+  public Conversation newConversation(String title, Uuid owner, String passHash, String salt) {
 
     Conversation response = null;
 
@@ -99,6 +98,8 @@ public class Controller implements BasicController {
       Serializers.INTEGER.write(connection.out(), NetworkCode.NEW_CONVERSATION_REQUEST);
       Serializers.STRING.write(connection.out(), title);
       Uuid.SERIALIZER.write(connection.out(), owner);
+      Serializers.STRING.write(connection.out(), passHash);
+      Serializers.STRING.write(connection.out(), salt);
 
       if (Serializers.INTEGER.read(connection.in()) == NetworkCode.NEW_CONVERSATION_RESPONSE) {
         response = Serializers.nullable(Conversation.SERIALIZER).read(connection.in());

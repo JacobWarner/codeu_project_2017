@@ -14,11 +14,11 @@
 
 package codeu.chat.client;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import codeu.chat.common.Password;
 import codeu.chat.common.User;
 import codeu.chat.util.Logger;
 import codeu.chat.util.Uuid;
@@ -26,7 +26,7 @@ import codeu.chat.util.store.Store;
 
 public final class ClientUser {
 
-  private final static Logger.Log LOG = Logger.newLog(ClientUser.class);
+  private static final Logger.Log LOG = Logger.newLog(ClientUser.class);
 
   private static final Collection<Uuid> EMPTY = Arrays.asList(new Uuid[0]);
   private final Controller controller;
@@ -39,22 +39,33 @@ public final class ClientUser {
   // This is the set of users known to the server, sorted by name.
   private Store<String, User> usersByName = new Store<>(String.CASE_INSENSITIVE_ORDER);
 
-  public ClientUser(Controller controller, View view) {
+  ClientUser(Controller controller, View view) {
     this.controller = controller;
     this.view = view;
   }
 
   // Validate the username string
-  static public boolean isValidName(String userName) {
-    boolean clean = true;
-    if (userName.length() == 0) {
-      clean = false;
-    } else {
-
-      // TODO: check for invalid characters
-
+  private static boolean isValidName(String userName) {
+    if(userName == null || userName.equals("") || userName.length() <= 1 || userName.length() > 20){
+      return false;
     }
-    return clean;
+    Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~`]");
+    Matcher m = p.matcher(userName);
+    return !m.find();
+  }
+
+  //Validate the password string
+  static boolean isValidPassword(String password) {
+    if(password == null || password.equals("") || password.length() < 6 || password.length() > 64){
+      return false;
+    }
+    Pattern p = Pattern.compile("[\"()<>/;\\\\*%$^&+=:|~` 0-9]");
+    Matcher m = p.matcher(password);
+    int specialCharacters = 0;
+    while(m.find()){
+      specialCharacters++;
+    }
+    return specialCharacters >= 2;
   }
 
   public boolean hasCurrent() {
@@ -65,14 +76,15 @@ public final class ClientUser {
     return current;
   }
 
-  public boolean signInUser(String name) {
+  public boolean signInUser(String name, String password) {
     updateUsers();
 
     final User prev = current;
     if (name != null) {
       final User newCurrent = usersByName.first(name);
       if (newCurrent != null) {
-        current = newCurrent;
+        boolean userAccess = newCurrent.isPassword(password);
+        if (userAccess) current = newCurrent;
       }
     }
     return (prev != current);
@@ -88,17 +100,21 @@ public final class ClientUser {
     printUser(current);
   }
 
-  public void addUser(String name) {
-    final boolean validInputs = isValidName(name);
+  public void addUser(String name, String password) {
+    final boolean validInputs = isValidName(name) && isValidPassword(password);
+    String salt = Password.generateSalt();
+    String passwordHash = Password.getHashCode(password, salt);
 
-    final User user = (validInputs) ? controller.newUser(name) : null;
+    final User user = (validInputs) ? controller.newUser(name, passwordHash, salt) : null;
 
     if (user == null) {
-      System.out.format("Error: user not created - %s.\n",
-          (validInputs) ? "server failure" : "bad input value");
+      System.out.format(
+          "Error: user not created - %s.\n", (validInputs) ? "server failure" : "bad input value");
     } else {
       LOG.info("New user complete, Name= \"%s\" UUID=%s", user.name, user.id);
       updateUsers();
+      current = user;
+      System.out.println("You are now signed in as " + user.name + ".");
     }
   }
 
@@ -110,17 +126,12 @@ public final class ClientUser {
   }
 
   public User lookup(Uuid id) {
-    return (usersById.containsKey(id)) ? usersById.get(id) : null;
+    return usersById.getOrDefault(id, null);
   }
 
   public String getName(Uuid id) {
     final User user = lookup(id);
-    if (user == null) {
-      LOG.warning("userContext.lookup() failed on ID: %s", id);
-      return null;
-    } else {
-      return user.name;
-    }
+    return (user == null) ? null : user.name;
   }
 
   public Iterable<User> getUsers() {
@@ -137,17 +148,12 @@ public final class ClientUser {
     }
   }
 
-  public static String getUserInfoString(User user) {
-    return (user == null) ? "Null user" :
-        String.format(" User: %s\n   Id: %s\n   created: %s\n", user.name, user.id, user.creation);
+  private static void printUser(User user) {
+    System.out.println(user.getUserInfo());
   }
 
-  public String showUserInfo(String uname) {
-    return getUserInfoString(usersByName.first(uname));
-  }
-
-  // Move to User's toString()
-  public static void printUser(User user) {
-    System.out.println(getUserInfoString(user));
+  public User getUserByName(String username) {
+    usersByName = new Store<>(String.CASE_INSENSITIVE_ORDER);
+    return usersByName.first(username);
   }
 }
